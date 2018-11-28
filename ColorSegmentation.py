@@ -26,35 +26,40 @@ def cd_color_segmentation(img):
 
     cone_img = img.copy()
 
-    #convert to hsv
-    hsv = cv2.cvtColor(cone_img, cv2.COLOR_BGR2HSV)
-    h, s, v = cv2.split(hsv)
+    try: # Just tryna not have errors. - Marcus
 
-    #apply color ranges
-    hue_mask = cv2.inRange(h, LOW_HUE, HIGH_HUE)
-    sat_mask = cv2.inRange(s, LOW_SATURATION, HIGH_SATURATION)
-    val_mask = cv2.inRange(v, LOW_VALUE, HIGH_VALUE)
+        #convert to hsv
+        hsv = cv2.cvtColor(cone_img, cv2.COLOR_BGR2HSV)
+        h, s, v = cv2.split(hsv)
 
-    #apply mask
-    total_mask = cv2.bitwise_and(hue_mask, cv2.bitwise_and(sat_mask, val_mask))
-    cone_img = cv2.bitwise_and(cone_img, cone_img, mask=total_mask)
+        #apply color ranges
+        hue_mask = cv2.inRange(h, LOW_HUE, HIGH_HUE)
+        sat_mask = cv2.inRange(s, LOW_SATURATION, HIGH_SATURATION)
+        val_mask = cv2.inRange(v, LOW_VALUE, HIGH_VALUE)
 
-    #get contours
-    _, contours, hierarchy = cv2.findContours(total_mask, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE)
+        #apply mask
+        total_mask = cv2.bitwise_and(hue_mask, cv2.bitwise_and(sat_mask, val_mask))
+        cone_img = cv2.bitwise_and(cone_img, cone_img, mask=total_mask)
 
-    #get largest contour
-    contour_areas = [cv2.contourArea(contour) for contour in contours]
-    try:
-        max_ind = np.argmax(contour_areas)
-    except ValuError:
+        #get contours
+        _, contours, hierarchy = cv2.findContours(total_mask, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE)
+
+        #get largest contour
+        contour_areas = [cv2.contourArea(contour) for contour in contours]
+        try:
+            max_ind = np.argmax(contour_areas)
+        except ValueError:
+            return ((0,0),(0,0))
+        biggest_contour = contours[max_ind]
+
+        #draw bounding rectangle
+        x1,y1,w,h = cv2.boundingRect(biggest_contour)
+        x2,y2 = (x1+w, y1+h)
+        cv2.rectangle(cone_img,(x1,y1),(x2,y2),(0,255,0),2)
+        ########### YOUR CODE ENDS HERE ###########
+
+        # Return bounding box
+        return ((x1, y1), (x2, y2))
+
+    except:
         return ((0,0),(0,0))
-    biggest_contour = contours[max_ind]
-
-    #draw bounding rectangle
-    x1,y1,w,h = cv2.boundingRect(biggest_contour)
-    x2,y2 = (x1+w, y1+h)
-    cv2.rectangle(cone_img,(x1,y1),(x2,y2),(0,255,0),2)
-    ########### YOUR CODE ENDS HERE ###########
-
-    # Return bounding box
-    return ((x1, y1), (x2, y2))
