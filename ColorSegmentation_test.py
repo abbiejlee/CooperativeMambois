@@ -68,7 +68,7 @@ def test_algorithm(detection_func, test_file_path = "./test_images.csv"):
             # Detection bbox
             bbox_est = detection_func(img)
             score = iou_score(bbox_est, bbox_true)
-            
+
             # Add score to dict
             scores[img_path] = score
 

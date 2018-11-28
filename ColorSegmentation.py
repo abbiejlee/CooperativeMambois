@@ -25,7 +25,7 @@ def cd_color_segmentation(img):
     HIGH_VALUE = 255
 
     cone_img = img.copy()
-     
+
     #convert to hsv
     hsv = cv2.cvtColor(cone_img, cv2.COLOR_BGR2HSV)
     h, s, v = cv2.split(hsv)
@@ -44,7 +44,10 @@ def cd_color_segmentation(img):
 
     #get largest contour
     contour_areas = [cv2.contourArea(contour) for contour in contours]
-    max_ind = np.argmax(contour_areas)
+    try:
+        max_ind = np.argmax(contour_areas)
+    except ValuError:
+        return ((0,0),(0,0))
     biggest_contour = contours[max_ind]
 
     #draw bounding rectangle
