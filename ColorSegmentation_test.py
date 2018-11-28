@@ -42,7 +42,7 @@ def iou_score(bbox1, bbox2):
 
     return score
 
-def test_algorithm(detection_func, test_file_path = "./test_images.csv"):
+def test_algorithm(detection_func, test_file_path = "./test_image.csv"):
     """
     Test a cone detection function and return the average score based on all the test images
     Input:
@@ -62,7 +62,7 @@ def test_algorithm(detection_func, test_file_path = "./test_images.csv"):
         for row in csvReader:
             # Find image path and ground truth bbox
             img_path = row[0]
-            bbox_true = ast.literal_eval(row[1])
+            bbox_true = ((129,118), (294,280))
             img = cv2.imread(img_path)
 
             # Detection bbox
@@ -78,5 +78,4 @@ def test_algorithm(detection_func, test_file_path = "./test_images.csv"):
 if __name__ == '__main__':
     scores = test_algorithm(cd_color_segmentation)
     if scores:
-        for (img, val) in scores.iteritems():
-            print((img, val))
+       print(scores)
