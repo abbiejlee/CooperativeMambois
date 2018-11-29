@@ -61,5 +61,6 @@ def cd_color_segmentation(img):
         # Return bounding box
         return ((x1, y1), (x2, y2))
 
-    except:
+    except Exception as error:
+        print(error)
         return ((0,0),(0,0))

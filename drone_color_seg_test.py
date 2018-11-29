@@ -73,7 +73,7 @@ class DroneColorSegTest:
                 print("flip left")
                 success = self.mambo.flip(direction="left")
                 print("self.mambo flip result %s" % success)
-                self.mambo.smart_sleep(5)
+                self.mambo.smart_sleep(2)
 
             print("landing")
             print("flying state is %s" % self.mambo.sensors.flying_state)
