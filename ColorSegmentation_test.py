@@ -68,7 +68,7 @@ def test_algorithm(detection_func, test_file_path = "./test_image.csv"):
             # Detection bbox
             bbox_est = detection_func(img)
             score = iou_score(bbox_est, bbox_true)
-            
+
             # Add score to dict
             scores[img_path] = score
 
@@ -78,4 +78,5 @@ def test_algorithm(detection_func, test_file_path = "./test_image.csv"):
 if __name__ == '__main__':
     scores = test_algorithm(cd_color_segmentation)
     if scores:
-       print(scores)
+        for (img, val) in scores.iteritems():
+            print((img, val))

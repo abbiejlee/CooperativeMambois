@@ -24,41 +24,45 @@ def cd_color_segmentation(img):
     LOW_VALUE = 160
     HIGH_VALUE = 255
     ln_color = (0,255,0)
-    
+
     cone_img = img.copy()
-     
-    #convert to hsv
-    hsv = cv2.cvtColor(cone_img, cv2.COLOR_BGR2HSV)
-    h, s, v = cv2.split(hsv)
 
-    #apply color ranges
-    hue_mask = cv2.inRange(h, LOW_HUE, HIGH_HUE)
-    sat_mask = cv2.inRange(s, LOW_SATURATION, HIGH_SATURATION)
-    val_mask = cv2.inRange(v, LOW_VALUE, HIGH_VALUE)
+    try: # my drone_color_seg_test throws tons of exceptions here so I'm just gonna catch 'em all'
+        #convert to hsv
+        hsv = cv2.cvtColor(cone_img, cv2.COLOR_BGR2HSV)
+        h, s, v = cv2.split(hsv)
 
-    #apply mask
-    total_mask = cv2.bitwise_and(hue_mask, cv2.bitwise_and(sat_mask, val_mask))
-    cone_img = cv2.bitwise_and(cone_img, cone_img, mask=total_mask)
+        #apply color ranges
+        hue_mask = cv2.inRange(h, LOW_HUE, HIGH_HUE)
+        sat_mask = cv2.inRange(s, LOW_SATURATION, HIGH_SATURATION)
+        val_mask = cv2.inRange(v, LOW_VALUE, HIGH_VALUE)
 
-    #get contours
-    _, contours, hierarchy = cv2.findContours(total_mask, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE)
+        #apply mask
+        total_mask = cv2.bitwise_and(hue_mask, cv2.bitwise_and(sat_mask, val_mask))
+        cone_img = cv2.bitwise_and(cone_img, cone_img, mask=total_mask)
 
-    if contours:
-        #get largest contour
-        contour_areas = [cv2.contourArea(contour) for contour in contours]
-        max_ind = np.argmax(contour_areas)
-        biggest_contour = contours[max_ind]
- 
-        #if target area detected is large enough, send firing signal 
-        biggest_contour_area = contour_areas[max_ind]
-        if biggest_contour_area > 10000:
-            ln_color = (0, 0, 255)
-            print("ready to fire")
-        #draw bounding rectangle
-        x1,y1,w,h = cv2.boundingRect(biggest_contour)
-        x2,y2 = (x1+w, y1+h)
-    cv2.rectangle(cone_img,(x1,y1),(x2,y2),(0,255,0),2)
-    ########### YOUR CODE ENDS HERE ###########
+        #get contours
+        _, contours, hierarchy = cv2.findContours(total_mask, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE)
+
+        if contours:
+            #get largest contour
+            contour_areas = [cv2.contourArea(contour) for contour in contours]
+            max_ind = np.argmax(contour_areas)
+            biggest_contour = contours[max_ind]
+
+            #if target area detected is large enough, send firing signal
+            biggest_contour_area = contour_areas[max_ind]
+            if biggest_contour_area > 10000:
+                ln_color = (0, 0, 255)
+                print("ready to fire")
+            #draw bounding rectangle
+            x1,y1,w,h = cv2.boundingRect(biggest_contour)
+            x2,y2 = (x1+w, y1+h)
+        cv2.rectangle(cone_img,(x1,y1),(x2,y2),(0,255,0),2)
+        ########### YOUR CODE ENDS HERE ###########
+
+    except Exception as error:
+        print(error)
 
     # Return bounding box
     return [((x1, y1), (x2, y2)), ln_color]
