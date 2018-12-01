@@ -43,7 +43,9 @@ class DroneStateEstimationTest:
         sensor_readout = "\nmambo states:"
         sensor_readout += "\n\tflying_state: " + str(self.mambo.sensors.flying_state)
         sensor_readout += "\n\tbattery :" + str(self.mambo.sensors.battery)
-        sensor_readout += "\n\tspeed (x, y, z) :" + str([self.mambo.sensors.speed_x, self.mambo.sensors.speed_y, self.mambo.sensors.speed_z])
+        sensor_readout += "\n\tspeed (x, y, z) :" + str([self.mambo.sensors.speed_x,
+                                                            self.mambo.sensors.speed_y,
+                                                            self.mambo.sensors.speed_z])
         sensor_readout += "\n\taltitude: " + str(self.mambo.sensors.altitude)
         print(sensor_readout)
 
@@ -53,6 +55,9 @@ class DroneStateEstimationTest:
         self.mambo takes off, hovers, flies forward, hovers, flies back, lands.
         self.mambo will offload its current state as fast as possible to be
         displayed at terminal and stored offboard.
+        mamboVision and args are only supplied because DroneVisionGUI requires
+        them; all references to mamboVision are done using the class
+        member self.mamboVision.
         """
         if testFlying:
             print('taking off')
@@ -107,7 +112,7 @@ class DroneStateEstimationTest:
 testFlying = True # set this to true if you want to fly
 mamboAddr = "e0:14:ad:f6:3d:fc" # BLE address
 use_wifi = True # set to true if using wifi instead of BLE
-use_vision = False # set to true if you want to turn on vision
+use_vision = True # set to true if you want to turn on vision
 
 if __name__ == "__main__":
     droneStateEstimationTest = DroneStateEstimationTest(testFlying, mamboAddr, use_wifi, use_vision)
