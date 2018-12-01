@@ -16,14 +16,16 @@ from pyparrot.Minidrone import Mambo
 from pyparrot.DroneVisionGUI import DroneVisionGUI
 
 class DroneStateEstimationTest:
-    def __init__(self, testFlying, mamboAddr, use_wifi):
+    def __init__(self, testFlying, mamboAddr, use_wifi, use_vision):
         self.testFlying = testFlying
         self.mamboAddr = mamboAddr
         self.use_wifi = use_wifi
+        self.use_vision = use_vision
         self.mambo = Mambo(self.mamboAddr, self.use_wifi)
-        self.mamboVision = DroneVisionGUI(self.mambo, is_bebop=False, buffer_size=200,
+        self.mambo.set_user_sensor_callback(self.sensor_cb, args=None)
+        if self.use_vision:
+            self.mamboVision = DroneVisionGUI(self.mambo, is_bebop=False, buffer_size=200,
                                      user_code_to_run=self.mambo_fly_function, user_args=None)
-        self.mambo.set_user_sensor_callback(sensor_cb, args=None)
 
     def vision_cb(self, args):
         """
@@ -37,8 +39,14 @@ class DroneStateEstimationTest:
         Called whenever a drone sensor is updated.
         Prints the state to terminal.
         """
-        self.mambo.ask_for_state_update()
-        print(self.mambo.sensors)
+        # self.mambo.ask_for_state_update()
+        sensor_readout = "\nmambo states:"
+        sensor_readout += "\n\tflying_state: " + str(self.mambo.sensors.flying_state)
+        sensor_readout += "\n\tbattery :" + str(self.mambo.sensors.battery)
+        sensor_readout += "\n\tspeed (x, y, z) :" + str([self.mambo.sensors.speed_x, self.mambo.sensors.speed_y, self.mambo.sensors.speed_z])
+        sensor_readout += "\n\taltitude: " + str(self.mambo.sensors.altitude)
+        print(sensor_readout)
+
 
     def mambo_fly_function(self, mamboVision, args):
         """
@@ -52,25 +60,27 @@ class DroneStateEstimationTest:
 
             if self.mambo.sensors.flying_state != 'emergency':
                 print('flying directly up')
-                self.mambo.fly_direct(roll=0, pitch=0, yaw=0, vertical_movement=15, duration=2)
-                self.mambo.smart_sleep(3)
+                self.mambo.fly_direct(roll=0, pitch=0, yaw=0, vertical_movement=15, duration=4)
+                self.mambo.smart_sleep(5)
 
-                print("flying directly forward")
-                self.mambo.fly_direct(roll=0, pitch=25, yaw=0, vertical_movement=0, duration=3)
-                self.mambo.smart_sleep(3)
-
-                print("flying directly backward")
-                self.mambo.fly_direct(roll=0, pitch=-25, yaw=0, vertical_movement=0, duration=3)
-                self.mambo.smart_sleep(3)
+                # print("flying directly forward")
+                # self.mambo.fly_direct(roll=0, pitch=25, yaw=0, vertical_movement=0, duration=3)
+                # self.mambo.smart_sleep(3)
+                #
+                # print("flying directly backward")
+                # self.mambo.fly_direct(roll=0, pitch=-25, yaw=0, vertical_movement=0, duration=3)
+                # self.mambo.smart_sleep(3)
+                # self.mambo.smart_sleep(5) # commented out above and using this b/c I'm flying in my room rn
 
             print("landing")
             self.mambo.safe_land(5)
         else:
             print("Sleeeping for 15 seconds - move the self.mambo around")
-            self.mambo.smart_sleep(15)
+            self.mambo.smart_sleep(5)
 
-        print("ending vision")
-        self.mamboVision.close_video()
+        if self.use_vision:
+            print("ending vision")
+            self.mamboVision.close_video()
         self.mambo.smart_sleep(5)
         print("disconnecting")
         self.mambo.disconnect()
@@ -87,14 +97,18 @@ class DroneStateEstimationTest:
             self.mambo.ask_for_state_update()
             self.mambo.smart_sleep(1)
 
-            print("starting vision")
-            self.mamboVision.set_user_callback_function(self.vision_cb, user_callback_args=None)
-            self.mamboVision.open_video()
+            if self.use_vision:
+                print("starting vision")
+                self.mamboVision.set_user_callback_function(self.vision_cb, user_callback_args=None)
+                self.mamboVision.open_video()
+            else:
+                self.mambo_fly_function(None, None)
 
 testFlying = True # set this to true if you want to fly
 mamboAddr = "e0:14:ad:f6:3d:fc" # BLE address
 use_wifi = True # set to true if using wifi instead of BLE
+use_vision = False # set to true if you want to turn on vision
 
 if __name__ == "__main__":
-    droneStateEstimationTest = DroneStateEstimationTest(testFlying, mamboAddr, use_wifi)
+    droneStateEstimationTest = DroneStateEstimationTest(testFlying, mamboAddr, use_wifi, use_vision)
     droneStateEstimationTest.run_test()
