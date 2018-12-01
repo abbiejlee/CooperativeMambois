@@ -1,21 +1,21 @@
 """
-    state_estimation_test.py
+    displacement_calculation_test.py
     Marcus Abate | 16.30
+    12/1/18
 
-    Test to grab state estimates off the mambo onboard state estimator via
-    pyparrot. The purpose of this test is to determine the best way to
-    get the current state of the drone.
-    This test also has the drone take off, fly forward, and then return to
-    its original start location. It can be used to determine how accurate state
-    estimation is and how bad the drift is WITHOUT a custom position controller.
-    This also runs the forward facing camera, so that tests are more
-    realistic. The vision frames arent processed.
+    Simple test of the PositionController class's ability to determine total
+    displacement from original starting point based on velocity feedback.
+    This test will help to determine whether state updates are happening fast
+    enough and whether the sensors have low enough drift to accurately track
+    position from the starting point.
 """
 
 from pyparrot.Minidrone import Mambo
 from pyparrot.DroneVisionGUI import DroneVisionGUI
+import time
+import math
 
-class DroneStateEstimationTest:
+class DisplacementCalculationTest:
     def __init__(self, testFlying, mamboAddr, use_wifi, use_vision):
         self.testFlying = testFlying
         self.mamboAddr = mamboAddr
@@ -26,6 +26,12 @@ class DroneStateEstimationTest:
         if self.use_vision:
             self.mamboVision = DroneVisionGUI(self.mambo, is_bebop=False, buffer_size=200,
                                      user_code_to_run=self.mambo_fly_function, user_args=None)
+            self.mamboVision.set_user_callback_function(self.vision_cb, user_callback_args=None)
+        self.current_xyz_pos = [0, 0, 0]
+        self.current_xyz_vel = [0, 0, 0]
+        # self.current_state = self.current_xyz_pos + self.current_xyz_vel
+        self.time_of_last_update = time.perf_counter()
+        self.dt_since_last_update = 0
 
     def vision_cb(self, args):
         """
@@ -37,24 +43,31 @@ class DroneStateEstimationTest:
     def sensor_cb(self, args):
         """
         Called whenever a drone sensor is updated.
-        Prints the state to terminal.
+        Sends sensor readings to the position controller to get displacement.
         """
-        # self.mambo.ask_for_state_update()
-        sensor_readout = "\nmambo states:"
-        sensor_readout += "\n\tflying_state: " + str(self.mambo.sensors.flying_state)
-        sensor_readout += "\n\tbattery :" + str(self.mambo.sensors.battery)
-        sensor_readout += "\n\tspeed (x, y, z) :" + str([self.mambo.sensors.speed_x,
-                                                            self.mambo.sensors.speed_y,
-                                                            self.mambo.sensors.speed_z])
-        sensor_readout += "\n\taltitude: " + str(self.mambo.sensors.altitude)
-        print(sensor_readout)
+        self.current_xyz_vel = [self.mambo.sensors.speed_x,
+                                self.mambo.sensors.speed_y,
+                                self.mambo.sensors.speed_z]
+        self.dt_since_last_update = time.perf_counter() - self.time_of_last_update
+        self.time_of_last_update = time.perf_counter()
+        for i in range(3):
+            self.current_xyz_pos[i] += self.current_xyz_vel[i]*self.dt_since_last_update
 
+        # print("\nPosition Estimate:")
+        # print("\t" + str(self.current_xyz_pos))
+        print("Euclidean XY Plane Distance: " + str(self.calc_xy_dist()))
+        # self.current_state = self.current_xyz_pos + self.current_xyz_vel
+
+    def calc_xy_dist(self):
+        dist = 0
+        dist += self.current_xyz_pos[0]**2
+        dist += self.current_xyz_pos[1]**2
+        dist = math.sqrt(dist)
+        return dist
 
     def mambo_fly_function(self, mamboVision, args):
         """
-        self.mambo takes off, hovers, flies forward, hovers, flies back, lands.
-        self.mambo will offload its current state as fast as possible to be
-        displayed at terminal and stored offboard.
+        self.mambo takes off, hovers, flies forward, hovers, lands.
         mamboVision and args are only supplied because DroneVisionGUI requires
         them; all references to mamboVision are done using the class
         member self.mamboVision.
@@ -64,16 +77,9 @@ class DroneStateEstimationTest:
             self.mambo.safe_takeoff(5)
 
             if self.mambo.sensors.flying_state != 'emergency':
-                print('flying directly up')
-                self.mambo.fly_direct(roll=0, pitch=0, yaw=0, vertical_movement=15, duration=4)
-                self.mambo.smart_sleep(5)
 
                 print("flying directly forward")
-                self.mambo.fly_direct(roll=0, pitch=25, yaw=0, vertical_movement=0, duration=3)
-                self.mambo.smart_sleep(3)
-
-                print("flying directly backward")
-                self.mambo.fly_direct(roll=0, pitch=-25, yaw=0, vertical_movement=0, duration=3)
+                self.mambo.fly_direct(roll=0, pitch=10, yaw=0, vertical_movement=0, duration=6)
                 self.mambo.smart_sleep(3)
 
             print("landing")
@@ -89,6 +95,9 @@ class DroneStateEstimationTest:
         print("disconnecting")
         self.mambo.disconnect()
 
+        print("\n\nFinal Position Estimate:")
+        print("\t" + str(self.current_xyz_pos))
+
     def run_test(self):
         print("trying to connect to self.mambo now")
         success = self.mambo.connect(num_retries=3)
@@ -103,7 +112,6 @@ class DroneStateEstimationTest:
 
             if self.use_vision:
                 print("starting vision")
-                self.mamboVision.set_user_callback_function(self.vision_cb, user_callback_args=None)
                 self.mamboVision.open_video()
             else:
                 self.mambo_fly_function(None, None)
@@ -114,5 +122,5 @@ use_wifi = True # set to true if using wifi instead of BLE
 use_vision = True # set to true if you want to turn on vision
 
 if __name__ == "__main__":
-    droneStateEstimationTest = DroneStateEstimationTest(testFlying, mamboAddr, use_wifi, use_vision)
-    droneStateEstimationTest.run_test()
+    displacementCalculationTest = DisplacementCalculationTest(testFlying, mamboAddr, use_wifi, use_vision)
+    displacementCalculationTest.run_test()

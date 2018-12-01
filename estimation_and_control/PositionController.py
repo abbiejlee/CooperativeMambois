@@ -22,6 +22,7 @@ class PositionController:
         Called at every state update in a main loop.
 
             current_state: holds the current state of the drone.
+                the state is x-y-z positions and x-y-z linear velocities.
         """
         self.current_state = current_state
 
