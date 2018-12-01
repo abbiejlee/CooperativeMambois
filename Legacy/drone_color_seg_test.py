@@ -33,7 +33,7 @@ class DroneColorSegTest:
 
             bb_size = self.get_bb_size()
             print('bb_size:',bb_size)
-            cv2.imwrite('test_file.png', img)
+            # cv2.imwrite('test_file.png', img) # uncomment to save latest pic
             if bb_size >= self.bb_threshold:
                 print('orange detected')
                 self.bb_trigger = True
@@ -110,7 +110,7 @@ class DroneColorSegTest:
 # set this to true if you want to fly
 testFlying = True
 # BLE address:
-mamboAddr = "e0:14:d0:63:3d:d1"
+mamboAddr = "e0:14:ad:f6:3d:fc"
 use_wifi = True
 
 if __name__ == "__main__":
