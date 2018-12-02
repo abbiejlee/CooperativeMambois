@@ -13,7 +13,6 @@
 from pyparrot.Minidrone import Mambo
 from pyparrot.DroneVisionGUI import DroneVisionGUI
 import time
-import math
 
 class DisplacementCalculationTest:
     def __init__(self, testFlying, mamboAddr, use_wifi, use_vision):
@@ -30,6 +29,7 @@ class DisplacementCalculationTest:
         self.current_xyz_vel = [0, 0, 0]
         self.current_state = self.current_xyz_pos + self.current_xyz_vel
 
+        self.start_measure = False
         # if using sensor_cb() callback:
         # self.mambo.set_user_sensor_callback(self.sensor_cb, args=None)
         # self.time_of_last_update = self.mambo.sensors.speed_ts
@@ -74,31 +74,40 @@ class DisplacementCalculationTest:
         Same as sensor_cb but uses a 2 second (4 sample) running average for
         velocity rather than the sensor output.
         """
-        if len(self.vels) == 20:
-            del self.vels[0]
+        if self.start_measure:
+            if len(self.vels) == 10:
+                del self.vels[0]
 
-        self.vels.append([self.mambo.sensors.speed_x,
-                          self.mambo.sensors.speed_y,
-                          self.mambo.sensors.speed_z])
+            self.vels.append([self.mambo.sensors.speed_x,
+                              self.mambo.sensors.speed_y,
+                              self.mambo.sensors.speed_z])
 
-        avg_vels = [sum(a)/len(a) for a in zip(*self.vels)]
+            avg_vels = [sum(a)/len(a) for a in zip(*self.vels)]
 
-        self.dt_since_last_update = time.perf_counter() - self.time_of_last_update
-        self.time_of_last_update = time.perf_counter()
-        for i in range(3):
-            self.current_xyz_pos[i] += avg_vels[i]*self.dt_since_last_update
-        # self.current_state = self.current_xyz_pos + self.current_xyz_vel
+            self.dt_since_last_update = time.perf_counter() - self.time_of_last_update
+            self.time_of_last_update = time.perf_counter()
+            for i in range(3):
+                self.current_xyz_pos[i] += avg_vels[i]*self.dt_since_last_update
+            # self.current_state = self.current_xyz_pos + self.current_xyz_vel
 
-        # print("\nPosition Estimate:")
-        # print("\t" + str(self.current_xyz_pos))
-        print("Euclidean XY Plane Distance: " + str(self.calc_xy_dist()))
-        print('dt:',self.dt_since_last_update)
+            # print("\nPosition Estimate:")
+            # print("\t" + str(self.current_xyz_pos))
+            # print('dt:',self.dt_since_last_update)
+            print("Euclidean XY Plane Distance: " + str(self.calc_xy_dist()))
+            print("POSX: ", self.mambo.sensors.sensors_dict['DronePosition_posx'])
+            print("POSY: ", self.mambo.sensors.sensors_dict['DronePosition_posy'])
+            print("POSZ: ", self.mambo.sensors.sensors_dict['DronePosition_posz'])
+            print("New Dist:", (self.mambo.sensors.sensors_dict['DronePosition_posx']**2 +
+                                self.mambo.sensors.sensors_dict['DronePosition_posy']**2)**0.5)
+            # for i,v in self.mambo.sensors.sensors_dict.items():
+                # print(i,v)
+            print('\n')
 
     def calc_xy_dist(self):
         dist = 0
         dist += self.current_xyz_pos[0]**2
         dist += self.current_xyz_pos[1]**2
-        dist = math.sqrt(dist)
+        dist = dist**0.5
         return dist
 
     def mambo_fly_function(self, mamboVision, args):
@@ -114,15 +123,27 @@ class DisplacementCalculationTest:
 
             if self.mambo.sensors.flying_state != 'emergency':
 
-                print("flying directly forward")
+                # this part is required to prevent faulty readings from contributing to position estimate
+                print("\n\n\nsensor calib\n\n\n")
+                while self.mambo.sensors.speed_ts == 0:
+                    continue
+                self.start_measure = True
+
+                print("\n\n\nflying directly forward\n\n\n")
                 self.mambo.fly_direct(roll=0, pitch=10, yaw=0, vertical_movement=0, duration=6)
                 self.mambo.smart_sleep(3)
 
-            print("landing")
+            print("\n\n\nlanding\n\n\n")
             self.mambo.safe_land(5)
         else:
-            print("Sleeeping for 15 seconds - move the self.mambo around")
-            self.mambo.smart_sleep(5)
+            print("\n\n\nsensor calib\n\n\n")
+            while self.mambo.sensors.speed_ts == 0:
+                continue
+            self.start_measure = True
+            print('done calibrating')
+            self.mambo.smart_sleep(20)
+            # print("Sleeeping for 15 seconds - move the self.mambo around")
+            # self.mambo.smart_sleep(5)
 
         if self.use_vision:
             print("ending vision")
@@ -155,7 +176,7 @@ class DisplacementCalculationTest:
 testFlying = True # set this to true if you want to fly
 mamboAddr = "e0:14:ad:f6:3d:fc" # BLE address
 use_wifi = True # set to true if using wifi instead of BLE
-use_vision = True # set to true if you want to turn on vision
+use_vision = False # set to true if you want to turn on vision
 
 if __name__ == "__main__":
     displacementCalculationTest = DisplacementCalculationTest(testFlying, mamboAddr, use_wifi, use_vision)
