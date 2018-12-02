@@ -13,7 +13,7 @@
 from pyparrot.Minidrone import Mambo
 from pyparrot.DroneVisionGUI import DroneVisionGUI
 import time
-import math
+from math import sqrt
 
 class DisplacementCalculationTest:
     def __init__(self, testFlying, mamboAddr, use_wifi, use_vision):
@@ -30,8 +30,8 @@ class DisplacementCalculationTest:
         self.current_xyz_pos = [0, 0, 0]
         self.current_xyz_vel = [0, 0, 0]
         # self.current_state = self.current_xyz_pos + self.current_xyz_vel
-        # self.time_of_last_update = time.perf_counter()
-        self.time_of_last_update = self.mambo.sensors.speed_ts
+        self.time_of_last_update = time.perf_counter()
+        # self.time_of_last_update = self.mambo.sensors.speed_ts
         self.dt_since_last_update = 0
         self.vels = [] # for calculating running average
 
