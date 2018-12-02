@@ -87,7 +87,7 @@ class DisplacementCalculationTest:
             self.dt_since_last_update = time.perf_counter() - self.time_of_last_update
             self.time_of_last_update = time.perf_counter()
             for i in range(3):
-                self.current_xyz_pos[i] += avg_vels[i]*self.dt_since_last_update
+                self.current_xyz_pos[i] += avg_vels[i]*self.dt_since_last_update*12
             # self.current_state = self.current_xyz_pos + self.current_xyz_vel
 
             # print("\nPosition Estimate:")
