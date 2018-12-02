@@ -27,12 +27,13 @@ class DetectionDrone:
         self.flight_func = flight_func
         self.vision_cb = vision_cb
         self.sensor_cb = sensor_cb
-        self.mambo = Mambo(self.mamboAddr, True)
+        self.mambo = Mambo(self.mamboAddr, use_wifi=True)
         if self.sensor_cb is not None:
             self.mambo.set_user_sensor_callback(self.sensor_cb, args=None)
         if self.useVision:
             self.mamboVision = DroneVisionGUI(self.mambo, is_bebop=False, buffer_size=200,
                                      user_code_to_run=self.flight_func, user_args=None)
+        if self.vision_cb is not None:
             self.mamboVision.set_user_callback_function(self.vision_cb, user_callback_args=None)
 
     def execute(self):
@@ -53,4 +54,4 @@ class DetectionDrone:
                 print("starting vision")
                 self.mamboVision.open_video()
             else:
-                self.mambo_fly_function(None, None)
+                self.mambo_fly_function(self.mamboVision, None)
