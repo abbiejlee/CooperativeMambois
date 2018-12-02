@@ -30,7 +30,8 @@ class DisplacementCalculationTest:
         self.current_xyz_pos = [0, 0, 0]
         self.current_xyz_vel = [0, 0, 0]
         # self.current_state = self.current_xyz_pos + self.current_xyz_vel
-        self.time_of_last_update = time.perf_counter()
+        # self.time_of_last_update = time.perf_counter()
+        self.time_of_last_update = self.mambo.sensors.speed_ts
         self.dt_since_last_update = 0
 
     def vision_cb(self, args):
@@ -48,14 +49,17 @@ class DisplacementCalculationTest:
         self.current_xyz_vel = [self.mambo.sensors.speed_x,
                                 self.mambo.sensors.speed_y,
                                 self.mambo.sensors.speed_z]
-        self.dt_since_last_update = time.perf_counter() - self.time_of_last_update
-        self.time_of_last_update = time.perf_counter()
+        # self.dt_since_last_update = time.perf_counter() - self.time_of_last_update
+        # self.time_of_last_update = time.perf_counter()
+        self.dt_since_last_update = self.mambo.sensors.speed_ts - self.time_of_last_update
+        self.time_of_last_update = self.mambo.sensors.speed_ts
         for i in range(3):
             self.current_xyz_pos[i] += self.current_xyz_vel[i]*self.dt_since_last_update
 
         # print("\nPosition Estimate:")
         # print("\t" + str(self.current_xyz_pos))
         print("Euclidean XY Plane Distance: " + str(self.calc_xy_dist()))
+        print("speed_ts: " + str(self.mambo.sensors.speed_ts))
         # self.current_state = self.current_xyz_pos + self.current_xyz_vel
 
     def calc_xy_dist(self):
