@@ -13,7 +13,7 @@
 from pyparrot.Minidrone import Mambo
 from pyparrot.DroneVisionGUI import DroneVisionGUI
 import time
-from math import sqrt
+import math
 
 class DisplacementCalculationTest:
     def __init__(self, testFlying, mamboAddr, use_wifi, use_vision):
@@ -22,18 +22,24 @@ class DisplacementCalculationTest:
         self.use_wifi = use_wifi
         self.use_vision = use_vision
         self.mambo = Mambo(self.mamboAddr, self.use_wifi)
-        self.mambo.set_user_sensor_callback(self.sensor_avg_cb, args=None)
         if self.use_vision:
             self.mamboVision = DroneVisionGUI(self.mambo, is_bebop=False, buffer_size=200,
                                      user_code_to_run=self.mambo_fly_function, user_args=None)
             self.mamboVision.set_user_callback_function(self.vision_cb, user_callback_args=None)
         self.current_xyz_pos = [0, 0, 0]
         self.current_xyz_vel = [0, 0, 0]
-        # self.current_state = self.current_xyz_pos + self.current_xyz_vel
-        self.time_of_last_update = time.perf_counter()
+        self.current_state = self.current_xyz_pos + self.current_xyz_vel
+
+        # if using sensor_cb() callback:
+        # self.mambo.set_user_sensor_callback(self.sensor_cb, args=None)
         # self.time_of_last_update = self.mambo.sensors.speed_ts
-        self.dt_since_last_update = 0
+
+        # if using sensor_avg_cb() callback:
+        self.mambo.set_user_sensor_callback(self.sensor_avg_cb, args=None)
+        self.time_of_last_update = time.perf_counter()
         self.vels = [] # for calculating running average
+
+        self.dt_since_last_update = 0
 
     def vision_cb(self, args):
         """
@@ -55,20 +61,20 @@ class DisplacementCalculationTest:
         self.dt_since_last_update = self.mambo.sensors.speed_ts - self.time_of_last_update
         self.time_of_last_update = self.mambo.sensors.speed_ts
         for i in range(3):
-            self.current_xyz_pos[i] += self.current_xyz_vel[i]*self.dt_since_last_update
+            self.current_xyz_pos[i] += self.current_xyz_vel[i]*self.dt_since_last_update/1000
+        # self.current_state = self.current_xyz_pos + self.current_xyz_vel
 
         # print("\nPosition Estimate:")
         # print("\t" + str(self.current_xyz_pos))
         print("Euclidean XY Plane Distance: " + str(self.calc_xy_dist()))
-        print("speed_ts: " + str(self.mambo.sensors.speed_ts))
-        # self.current_state = self.current_xyz_pos + self.current_xyz_vel
+        # print("speed_ts: " + str(self.mambo.sensors.speed_ts))
 
     def sensor_avg_cb(self, args):
         """
         Same as sensor_cb but uses a 2 second (4 sample) running average for
         velocity rather than the sensor output.
         """
-        if len(self.vels) == 4:
+        if len(self.vels) == 20:
             del self.vels[0]
 
         self.vels.append([self.mambo.sensors.speed_x,
@@ -81,11 +87,12 @@ class DisplacementCalculationTest:
         self.time_of_last_update = time.perf_counter()
         for i in range(3):
             self.current_xyz_pos[i] += avg_vels[i]*self.dt_since_last_update
+        # self.current_state = self.current_xyz_pos + self.current_xyz_vel
 
         # print("\nPosition Estimate:")
         # print("\t" + str(self.current_xyz_pos))
         print("Euclidean XY Plane Distance: " + str(self.calc_xy_dist()))
-        # self.current_state = self.current_xyz_pos + self.current_xyz_vel
+        print('dt:',self.dt_since_last_update)
 
     def calc_xy_dist(self):
         dist = 0
