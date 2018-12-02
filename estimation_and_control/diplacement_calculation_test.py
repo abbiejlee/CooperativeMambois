@@ -22,7 +22,7 @@ class DisplacementCalculationTest:
         self.use_wifi = use_wifi
         self.use_vision = use_vision
         self.mambo = Mambo(self.mamboAddr, self.use_wifi)
-        self.mambo.set_user_sensor_callback(self.sensor_cb, args=None)
+        self.mambo.set_user_sensor_callback(self.sensor_avg_cb, args=None)
         if self.use_vision:
             self.mamboVision = DroneVisionGUI(self.mambo, is_bebop=False, buffer_size=200,
                                      user_code_to_run=self.mambo_fly_function, user_args=None)
@@ -59,7 +59,7 @@ class DisplacementCalculationTest:
         print("Euclidean XY Plane Distance: " + str(self.calc_xy_dist()))
         # self.current_state = self.current_xyz_pos + self.current_xyz_vel
 
-    def sensor_cb_avg(self, args):
+    def sensor_avg_cb(self, args):
         """
         Same as sensor_cb but uses a 2 second (4 sample) running average for
         velocity rather than the sensor output.
