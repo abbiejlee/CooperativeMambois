@@ -32,6 +32,7 @@ class DisplacementCalculationTest:
         # self.current_state = self.current_xyz_pos + self.current_xyz_vel
         self.time_of_last_update = time.perf_counter()
         self.dt_since_last_update = 0
+        self.vels = [] # for calculating running average
 
     def vision_cb(self, args):
         """
@@ -52,6 +53,30 @@ class DisplacementCalculationTest:
         self.time_of_last_update = time.perf_counter()
         for i in range(3):
             self.current_xyz_pos[i] += self.current_xyz_vel[i]*self.dt_since_last_update
+
+        # print("\nPosition Estimate:")
+        # print("\t" + str(self.current_xyz_pos))
+        print("Euclidean XY Plane Distance: " + str(self.calc_xy_dist()))
+        # self.current_state = self.current_xyz_pos + self.current_xyz_vel
+
+    def sensor_cb_avg(self, args):
+        """
+        Same as sensor_cb but uses a 2 second (4 sample) running average for
+        velocity rather than the sensor output.
+        """
+        if len(self.vels) == 4:
+            del self.vels[0]
+
+        self.vels.append([self.mambo.sensors.speed_x,
+                          self.mambo.sensors.speed_y,
+                          self.mambo.sensors.speed_z])
+
+        avg_vels = [sum(a)/len(a) for a in zip(*self.vels)]
+
+        self.dt_since_last_update = time.perf_counter() - self.time_of_last_update
+        self.time_of_last_update = time.perf_counter()
+        for i in range(3):
+            self.current_xyz_pos[i] += avg_vels[i]*self.dt_since_last_update
 
         # print("\nPosition Estimate:")
         # print("\t" + str(self.current_xyz_pos))
