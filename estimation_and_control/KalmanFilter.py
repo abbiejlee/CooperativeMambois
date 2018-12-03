@@ -43,6 +43,16 @@ class KalmanFilter:
         # Measurement matrices
         self.Yhat = np.array([np.dot(self.A, self.X)+(np.dot(self.D, self.U))])
 
+    def init_P(self):
+        """
+        Computes initial state covariance matrix from
+
+        P[0] = E[X0*X0.T]
+
+        NOTE: expected value of a constant is just the constant
+        """
+        self.P = np.dot(self.X, self.X.T)
+
 
     def predict(X, P, A, Q, B, U):
         X = np.dot(A, X) + np.dot(B, U)
