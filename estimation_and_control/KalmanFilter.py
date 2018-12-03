@@ -10,10 +10,13 @@
 import numpy as np
 
 class KalmanFilter:
-    def __init__(self, A, B, X0, U0):
+    def __init__(self, A, B, C, D, X0, U0):
         """
-        A: state transition matrix
-        B: input effect matrix
+        Give matrices for an estimator of the form
+
+        xhat' = Axhat + Bu + L(y - yhat)
+        yhat = Cxhat + Du
+
         X0: initial state matrix
         U0: control input matrix
 
@@ -21,18 +24,24 @@ class KalmanFilter:
         """
         self.A = A
         self.B = B
-        self.X = X0
+        self.C = C
+        self.D = D
+
+        self.Xhat = X0
         self.U = U0
 
-        # TODO: check initialization of below matrices
+        # TODO(abbielee): check initialization of below matrices
 
-        # Initialize state matrices
-        self.P = diag((0.01, 0.01, 0.01, 0.01))
-        self.Q = eye(X.shape()[0])
+        # Initialize covariance matrices
+        self.P = self.init_p()                  # Error covariance
+        self.Rw = eye(self.X.shape()[0])        # Process noise covariance
+        self.Rv = eye(self.X.shape()[0])        # Measurement noise covariance
+
+        # Initialize estimation gains
+        self.L = self.update_L()
 
         # Measurement matrices
-        self.Y = array([[X[0,0] + abs(randn(1)[0])], [X[1,0] + abs(randn(1)[0])]])
-        self.H = array([[1, 0, 0, 0], [0, 1, 0, 0]])
+        self.Yhat = np.array([np.dot(self.A, self.X)+(np.dot(self.D, self.U))])
 
 
     def predict(X, P, A, Q, B, U):
