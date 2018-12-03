@@ -5,7 +5,7 @@
   Implementation of a Kalman filter for position estimation using the position
   and velocity sensor readings.
 
-  Source: https://arxiv.org/pdf/1204.0375.pdf
+  Based on 16.30 Lec 19 Notes from Fall 2018
 """
 import numpy as np
 
