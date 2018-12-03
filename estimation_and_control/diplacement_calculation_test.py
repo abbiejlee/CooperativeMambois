@@ -8,7 +8,7 @@
     This test will help to determine whether state updates are happening fast
     enough and whether the sensors have low enough drift to accurately track
     position from the starting point.
-    
+
 """
 
 import Drone
@@ -81,14 +81,14 @@ class DisplacementCalculationTest(Drone):
 
             if self.mambo.sensors.flying_state != 'emergency':
 
-                # this part is required to prevent faulty readings from contributing to position estimate
                 print("\n\n\nsensor calib\n\n\n")
                 while self.mambo.sensors.speed_ts == 0:
                     continue
                 self.start_measure = True
 
                 print("\n\n\nflying directly forward\n\n\n")
-                self.mambo.fly_direct(roll=0, pitch=10, yaw=0, vertical_movement=0, duration=6)
+                self.mambo.fly_direct(roll=0, pitch=10, yaw=0, vertical_movement=0,
+                                        duration=6)
                 self.mambo.smart_sleep(3)
 
             print("\n\n\nlanding\n\n\n")
