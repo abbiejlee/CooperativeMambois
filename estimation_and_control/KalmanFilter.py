@@ -64,7 +64,7 @@ class KalmanFilter:
 
         return None
 
-    def upate_estim(self, Y):
+    def update_estim(self, Y):
         """
         Computes next state estimate
 
