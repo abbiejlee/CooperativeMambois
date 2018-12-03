@@ -80,35 +80,14 @@ class KalmanFilter:
 
         return None
 
+class MamboKalman(KalmanFilter):
+    def __init__(self, X0, U0):
+        """
+        Initializes KalmanFilter for a parrot mambo
+        """
+        A = np.array()
+        B = np.array()
+        C = np.array()
+        D = np.array()
 
-    def predict(X, P, A, Q, B, U):
-        X = np.dot(A, X) + np.dot(B, U)
-        P = np.dot(A, np.dot(P, A.T)) + Q
-        return(X,P)
-
-    def update(X, P, Y, H, R):
-        IM = np.dot(H, X)
-        IS = R + np.dot(H, np.dot(P, H.T))
-        K = np.dot(P, np.dot(H.T, np.linalg.inv(IS)))
-        X = X + np.dot(K, (Y-IM))
-        P = P - np.dot(K, np.dot(IS, K.T))
-        LH = gauss_pdf(Y, IM, IS)
-        return (X,P,K,IM,IS,LH)
-
-    def gauss_pdf(X, M, S):
-        if M.shape()[1] == 1:
-        DX = X - np.tile(M, X.shape()[1])
-        E = 0.5 * np.sum(DX * (np.dot(np.linalg.inv(S), DX)), axis=0)
-        E = E + 0.5 * M.shape()[0] * log(2 * pi) + 0.5 * log(det(S))
-        P = exp(-E)
-        elif X.shape()[1] == 1:
-        DX = tile(X, M.shape()[1])- M
-        E = 0.5 * np.sum(DX * (np.dot(np.linalg.inv(S), DX)), axis=0)
-        E = E + 0.5 * M.shape()[0] * log(2 * pi) + 0.5 * log(det(S))
-        P = exp(-E)
-        else:
-        DX = X-M
-        E = 0.5 * np.dot(DX.T, np.dot(np.linalg.inv(S), DX))
-        E = E + 0.5 * M.shape()[0] * log(2 * pi) + 0.5 * log(det(S))
-        P = exp(-E)
-        return (P[0],E[0])
+        KalmanFilter.__init__(A, B, C, D, X0, U0)
