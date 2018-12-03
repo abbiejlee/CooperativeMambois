@@ -11,8 +11,6 @@ from pyparrot.Minidrone import Mambo
 from pyparrot.DroneVisionGUI import DroneVisionGUI
 
 class DetectionDrone:
-    # def __init__(self, testFlying, mamboAddr, flight_func, use_vision=True,
-                    # vision_cb=None, sensor_cb=None):
     def __init__(self, test_flying, mambo_addr, use_wifi=True, use_vision=True):
         """
         Constructor for the Drone Superclass.
@@ -30,19 +28,7 @@ class DetectionDrone:
         self.use_wifi = use_wifi
         self.use_vision = use_vision
         self.mamboAddr = mambo_addr
-        # self.flight_func = flight_func
-        # self.vision_cb = vision_cb
-        # self.sensor_cb = sensor_cb
         self.mambo = Mambo(self.mamboAddr, use_wifi=self.use_wifi)
-        # if self.sensor_cb is not None:
-        #     self.mambo.set_user_sensor_callback(self.sensor_cb, args=None)
-        # if self.use_vision:
-        #     self.mamboVision = DroneVisionGUI(self.mambo, is_bebop=False,
-        #                     buffer_size=200, user_code_to_run=self.flight_func,
-        #                     user_args=None)
-        #     if self.vision_cb is not None:
-        #         self.mamboVision.set_user_callback_function(self.vision_cb,
-        #                     user_callback_args=None)
 
         self.mambo.set_user_sensor_callback(self.sensor_cb, args=None)
         if self.use_vision:
