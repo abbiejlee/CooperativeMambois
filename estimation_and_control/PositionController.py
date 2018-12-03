@@ -1,12 +1,11 @@
 """
-    position_controller.py
+    PositionController.py
     Marcus Abate | 16.30
     12/1/18
 
     Calculates control input required to converge to a desired xyz position
     based on current state and drone dynamics. This is an LQR model.
     Control inputs are roll, pitch, yaw commands for the pyparrot interface.
-
 """
 
 class PositionController:
