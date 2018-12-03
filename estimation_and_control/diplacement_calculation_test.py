@@ -117,7 +117,7 @@ class DisplacementCalculationTest:
         them; all references to mamboVision are done using the class
         member self.mamboVision.
         """
-        if testFlying:
+        if self.testFlying:
             print('taking off')
             self.mambo.safe_takeoff(5)
 

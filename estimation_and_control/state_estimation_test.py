@@ -59,7 +59,7 @@ class DroneStateEstimationTest:
         them; all references to mamboVision are done using the class
         member self.mamboVision.
         """
-        if testFlying:
+        if self.testFlying:
             print('taking off')
             self.mambo.safe_takeoff(5)
 
@@ -109,9 +109,9 @@ class DroneStateEstimationTest:
                 self.mambo_fly_function(None, None)
 
 testFlying = True # set this to true if you want to fly
-mamboAddr = "e0:14:ad:f6:3d:fc" # BLE address
-use_wifi = True # set to true if using wifi instead of BLE
-use_vision = True # set to true if you want to turn on vision
+mamboAddr = "e0:14:ed:d2:3d:d1" # BLE address
+use_wifi = False # set to true if using wifi instead of BLE
+use_vision = False # set to true if you want to turn on vision
 
 if __name__ == "__main__":
     droneStateEstimationTest = DroneStateEstimationTest(testFlying, mamboAddr, use_wifi, use_vision)
