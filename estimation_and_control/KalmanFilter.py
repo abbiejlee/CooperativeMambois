@@ -53,6 +53,33 @@ class KalmanFilter:
         """
         self.P = np.dot(self.X, self.X.T)
 
+    def update_L(self):
+        """
+        Computes L[k] from P[k] and state matrices
+
+        L[k] = AP[K]C.T(Rv + CP[k]C.T)^-1
+        """
+        M = np.inv(self.Rv  + np.dot(C, np.dot(self.P, C.T)))
+        self.L = np.dot(A, np.dot(P, np.dot(C.T, M)))
+
+        return None
+
+    def upate_estim(self, Y):
+        """
+        Computes next state estimate
+
+        xhat[k+1] = Axhat[k] + Bu[k] + L[k](y[k] - yhat[k])
+        P[k+1] = (A-L[k]C)P[k](A-L[k]C).T + Rv + L[k]RwL[k].T
+
+        Y: numpy array of sensor values at timestep k
+        """
+        self.X = np.dot(A, X) + np.dot(B, U)
+
+        Acl = A - np.dot(self.L, self.C)
+        self.P = np.dot(Acl, np.dot(self.P, Acl.T)) + Rv + np.dot(self.L, np.dot(Rw, self.L))
+
+        return None
+
 
     def predict(X, P, A, Q, B, U):
         X = np.dot(A, X) + np.dot(B, U)
