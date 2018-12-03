@@ -80,6 +80,15 @@ class KalmanFilter:
 
         return None
 
+    def get_state_estimate(self, Y, U):
+        """
+        Given sensor measurements and control input, return the state estimate
+        """
+        self.update_L()
+        self.update_estim()
+
+        return self.X
+
 class MamboKalman(KalmanFilter):
     def __init__(self, X0, U0):
         """
