@@ -11,7 +11,7 @@
 
 """
 
-import Drone
+from Drone import Drone
 import time
 
 class DisplacementCalculationTest(Drone):
