@@ -24,10 +24,13 @@ You must then redefine the following functions within your class:
 
 ```
 def flight_func():
+    # your code here
 
 def vision_cb():
+    # your code here
 
 def sensor_cb():
+    # your code here
 ```
 
 Your main method should almost always look like this:
