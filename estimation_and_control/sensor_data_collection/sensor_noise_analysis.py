@@ -28,7 +28,7 @@ def plot_fft(data, dt, title=None):
     for key, signal in data.items():
         signal_array = np.array(signal)
         signal_tf = fft(signal_array)
-        T = 1.0/800 # sample spacing
+        T = dt # sample spacing
         xf = np.linspace(0.0, 1.0/(2.0*T), len(signal_array)//2)
 
         plt.plot(xf,
@@ -60,7 +60,7 @@ def plot_fft_clean(data, dt, title=None):
 
         signal_array = np.array(signal_clean)
         signal_tf = fft(signal_array)
-        T = dt
+        T = 1.0/2.0
         xf = np.linspace(0.0, 1.0/(2.0*T), len(signal_array)//2)
 
         plt.plot(xf,
