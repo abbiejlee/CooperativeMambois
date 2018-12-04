@@ -9,6 +9,7 @@
 """
 
 from Drone import Drone
+import time
 
 filename = "data_collecton.txt"
 write_mode = "a" # set to "a" to append. set to "w" to overwrite.
@@ -23,8 +24,8 @@ class DroneDataCollectionTest(Drone):
         self.vel_x = []
         self.vel_y = []
         self.vel_z = []
-        self.pos_last_update = 0
-        self.vel_last_update = 0
+        self.pos_last_update = time.perf_counter()
+        self.vel_last_update = time.perf_counter()
         self.vel_dt = []
         self.pos_dt = []
 
@@ -36,10 +37,10 @@ class DroneDataCollectionTest(Drone):
             self.vel_x.append(self.mambo.sensors.speed_x)
             self.vel_y.append(self.mambo.sensors.speed_y)
             self.vel_z.append(self.mambo.sensors.speed_z)
-            self.vel_dt.append(self.mambo.sensors.speed_ts - self.vel_last_update)
-            self.pos_dt.append(self.mambo.sensors.sensors_dict['DronePosition_ts'] - self.pos_last_update)
-            self.vel_last_update = self.mambo.sensors.speed_ts
-            self.pos_last_update = self.mambo.sensors.sensors_dict['DronePosition_ts']
+            self.vel_dt.append(time.perf_counter() - self.vel_last_update)
+            self.pos_dt.append(time.perf_counter() - self.pos_last_update)
+            self.vel_last_update = time.perf_counter()
+            self.pos_last_update = time.perf_counter()
 
     def flight_func(self, mamboVision, args):
         """
@@ -82,8 +83,8 @@ class DroneDataCollectionTest(Drone):
         else:
             print ('not test_flying')
 
-        avg_pos_dt = sum(self.pos_dt)/len(self.pos_dt)/1000.0
-        avg_vel_dt = sum(self.vel_dt)/len(self.vel_dt)/1000.0
+        avg_pos_dt = float(sum(self.pos_dt))/float(len(self.pos_dt))
+        avg_vel_dt = float(sum(self.vel_dt))/float(len(self.vel_dt))
         try:
             pos_update_rate = 1.0/avg_pos_dt
             vel_update_rate = 1.0/avg_vel_dt
@@ -100,6 +101,8 @@ class DroneDataCollectionTest(Drone):
         f.write('vel_x = ' + str(self.vel_x) + '\n')
         f.write('vel_y = ' + str(self.vel_y) + '\n')
         f.write('vel_z = ' + str(self.vel_z) + '\n')
+        f.write('pos_dt = ' + str(self.pos_dt) + '\n')
+        f.write('vel_dt = ' + str(self.vel_dt) + '\n')
         f.write('pos update rate = ' + str(pos_update_rate) + '\n')
         f.write('vel update rate = ' + str(vel_update_rate) + '\n')
 
