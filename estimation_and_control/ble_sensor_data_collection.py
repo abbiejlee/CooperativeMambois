@@ -22,6 +22,8 @@ class DroneDataCollectionTest(Drone):
         self.f = open(filename, write_mode)
         self.pos_last_update = time.perf_counter()
         self.vel_last_update = time.perf_counter()
+        self.vel_ts_last_update = 0
+        self.vel_ts_dt = 0
         self.vel_dt = 0
         self.pos_dt = 0
         self.data = []
@@ -33,6 +35,8 @@ class DroneDataCollectionTest(Drone):
         if self.start_measure:
             self.vel_dt = time.perf_counter() - self.vel_last_update
             self.pos_dt = time.perf_counter() - self.pos_last_update
+            self.vel_ts_dt = self.mambo.sensors.speed_ts - self.vel_ts_last_update
+            self.vel_ts_last_update = self.mambo.sensors.speed_ts
             self.vel_last_update = time.perf_counter()
             self.pos_last_update = time.perf_counter()
 
@@ -52,14 +56,9 @@ class DroneDataCollectionTest(Drone):
             for key, value in self.mambo.sensors.sensors_dict.items():
                 sensor_readout += "\n\t\t" + str(key) + ": " + str(value)
 
-            if self.pos_dt != 0:
-                sensor_readout += "\npos_rate: " + str(1.0/self.pos_dt)
-            else:
-                sensor_readout += "\npos_rate: " + "N\A"
-            if self.vel_dt != 0:
-                sensor_readout += "\nvel_rate: " + str(1.0/self.vel_dt)
-            else:
-                sensor_readout += "\nvel_rate: " + "N\A"
+            sensor_readout += "\npos_dt: " + str(self.pos_dt)
+            sensor_readout += "\nvel_dt: " + str(self.vel_dt)
+            sensor_readout += "\nvel_ts_dt: " + str(self.vel_ts_dt)
 
             self.data.append(sensor_readout)
             # print(sensor_readout)
