@@ -75,6 +75,15 @@ class Drone:
         When writing your code, define a new class for each test that inherits
         this class. Redefine your flight_func in your subclass to match
         your flight plan.
+        your redefinition of flight_func must include the mamboVision and args
+        arguments to properly work.
+        NOTE: after takeoff it is smart to do the following:
+            print("sensor calib")
+            while self.mambo.sensors.speed_ts == 0:
+                continue
+        This gives the sensors time to fully initialize and send back proper
+        readings for use in your sensor callback method.
+        Cannot be done before takeoff; sensors send nothing at this time.
         """
         pass
 
@@ -82,6 +91,7 @@ class Drone:
         """
         Callback function for every vision-handle update Again, defined by the
         user outside of the class in a specific subclass for every test script.
+        Your vision_cb must include the self and args arguments to work.
         """
         pass
 
@@ -89,5 +99,6 @@ class Drone:
         """
         Callback function for every sensor update. Again, defined by the
         user outside of the class in a specific subclass for every test script.
+        Your sensor_cb must include the self and args arguments to work.
         """
         pass
