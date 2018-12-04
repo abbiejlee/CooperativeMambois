@@ -52,7 +52,7 @@ class DroneColorSegTest:
         detects a large patch of orange. It then performs a flip and lands.
         """
 
-        if (testFlying):
+        if (self.testFlying):
             print("taking off!")
             self.mambo.safe_takeoff(5)
 

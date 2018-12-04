@@ -12,34 +12,14 @@
     realistic. The vision frames arent processed.
 """
 
-from pyparrot.Minidrone import Mambo
-from pyparrot.DroneVisionGUI import DroneVisionGUI
+from Drone import Drone
 
-class DroneStateEstimationTest:
-    def __init__(self, testFlying, mamboAddr, use_wifi, use_vision):
-        self.testFlying = testFlying
-        self.mamboAddr = mamboAddr
-        self.use_wifi = use_wifi
-        self.use_vision = use_vision
-        self.mambo = Mambo(self.mamboAddr, self.use_wifi)
-        self.mambo.set_user_sensor_callback(self.sensor_cb, args=None)
-        if self.use_vision:
-            self.mamboVision = DroneVisionGUI(self.mambo, is_bebop=False, buffer_size=200,
-                                     user_code_to_run=self.mambo_fly_function, user_args=None)
-
-    def vision_cb(self, args):
-        """
-        Any optional vision frame handling can be done here if desired.
-        Currently not implemented.
-        """
-        pass
-
+class DroneStateEstimationTest(Drone):
     def sensor_cb(self, args):
         """
         Called whenever a drone sensor is updated.
         Prints the state to terminal.
         """
-        # self.mambo.ask_for_state_update()
         sensor_readout = "\nmambo states:"
         sensor_readout += "\n\tflying_state: " + str(self.mambo.sensors.flying_state)
         sensor_readout += "\n\tbattery :" + str(self.mambo.sensors.battery)
@@ -50,7 +30,7 @@ class DroneStateEstimationTest:
         print(sensor_readout)
 
 
-    def mambo_fly_function(self, mamboVision, args):
+    def flight_func(self, mamboVision, args):
         """
         self.mambo takes off, hovers, flies forward, hovers, flies back, lands.
         self.mambo will offload its current state as fast as possible to be
@@ -59,7 +39,7 @@ class DroneStateEstimationTest:
         them; all references to mamboVision are done using the class
         member self.mamboVision.
         """
-        if testFlying:
+        if self.test_flying:
             print('taking off')
             self.mambo.safe_takeoff(5)
 
@@ -108,11 +88,11 @@ class DroneStateEstimationTest:
             else:
                 self.mambo_fly_function(None, None)
 
-testFlying = True # set this to true if you want to fly
-mamboAddr = "e0:14:ad:f6:3d:fc" # BLE address
-use_wifi = True # set to true if using wifi instead of BLE
-use_vision = True # set to true if you want to turn on vision
+test_flying = True # set this to true if you want to fly
+mambo_addr = "e0:14:a7:ed:3d:fc" # BLE address
+use_wifi = False # set to true if using wifi instead of BLE
+use_vision = False # set to true if you want to turn on vision
 
 if __name__ == "__main__":
-    droneStateEstimationTest = DroneStateEstimationTest(testFlying, mamboAddr, use_wifi, use_vision)
-    droneStateEstimationTest.run_test()
+    droneStateEstimationTest = DroneStateEstimationTest(test_flying, mambo_addr, use_wifi, use_vision)
+    droneStateEstimationTest.execute()
