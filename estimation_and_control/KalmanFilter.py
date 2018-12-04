@@ -93,6 +93,11 @@ class MamboKalman(KalmanFilter):
     def __init__(self, X0, U0):
         """
         Initializes KalmanFilter for a parrot mambo
+
+        Model based on dynamics equations in Pset 2 and linearized model
+        in Lab 3 from 16.30 Fall 2018
+
+        states: x y z yaw pitch roll xdot ydot zdot p q r
         """
         A = np.array()
         B = np.array()
