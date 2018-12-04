@@ -13,20 +13,29 @@
 from Drone import Drone
 ```
 
- at the top of your script. Then, you define a class for your test script that *inherits* the Drone class:
+at the top of your script. Then, you define a class for your test script (named TestDrone, for instance) that *inherits* the Drone class:
 
- ```
- class TestDrone(Drone):
- ```
+```
+class TestDrone(Drone):
+   # your code here
+```
 
- You must then redefine the follwing functions within your class:
+You must then redefine the following functions within your class:
 
- ```
- def flight_func():
+```
+def flight_func():
 
- def vision_cb():
+def vision_cb():
 
- def sensor_cb():
- ```
+def sensor_cb():
+```
 
- Note that you only have to redefine the two callbacks if you're planning on using them. ``flight_func`` must be redefined always. See the comments in ``Drone.py`` to get a better idea of how this works, or see ``src/detection_drone_test.py`` for a working example.
+Your main method should almost always look like this:
+
+```
+if __name__ == "__main__":
+    droneTest = DroneTest(args)
+    droneTest.execute()
+```
+
+Note that you only have to redefine the two callbacks if you're planning on using them. ``flight_func`` must be redefined always. See the comments in ``Drone.py`` to get a better idea of how this works, or see ``src/detection_drone_test.py`` for a working example.
