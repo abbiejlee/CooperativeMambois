@@ -99,4 +99,8 @@ class MamboKalman(KalmanFilter):
         C = np.array()
         D = np.array()
 
-        KalmanFilter.__init__(A, B, C, D, X0, U0)
+        Rw = np.array([])
+
+        Rv = np.array([])
+
+        KalmanFilter.__init__(A, B, C, D, Rw, Rv, X0, U0)
