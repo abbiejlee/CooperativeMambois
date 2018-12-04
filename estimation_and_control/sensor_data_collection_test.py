@@ -23,21 +23,30 @@ class DroneDataCollectionTest(Drone):
         self.vel_x = []
         self.vel_y = []
         self.vel_z = []
+        self.pos_last_update = 0
+        self.vel_last_update = 0
+        self.vel_dt = []
+        self.pos_dt = []
 
     def sensor_cb(self, args):
         if self.start_measure:
-            # print('appending data')
             self.pos_x.append(self.mambo.sensors.sensors_dict['DronePosition_posx'])
             self.pos_y.append(self.mambo.sensors.sensors_dict['DronePosition_posy'])
             self.pos_z.append(self.mambo.sensors.sensors_dict['DronePosition_posz'])
             self.vel_x.append(self.mambo.sensors.speed_x)
             self.vel_y.append(self.mambo.sensors.speed_y)
             self.vel_z.append(self.mambo.sensors.speed_z)
+            self.vel_dt.append(self.mambo.sensors.speed_ts - self.vel_last_update)
+            self.pos_dt.append(self.mambo.sensors.sensors_dict['DronePosition_ts'] - self.pos_last_update)
+            self.vel_last_update = self.mambo.sensors.speed_ts
+            self.pos_last_update = self.mambo.sensors.sensors_dict['DronePosition_ts']
 
     def flight_func(self, mamboVision, args):
         """
         takeoff, hover, fly forward for 5 seconds, fly left for 5 seconds,
         fly right for 5 seconds, fly back for 5 seconds.
+        the sensor data read out from this experiment is written to a file in the directory per the
+        'filename' variable at the top of this script.
         """
         if self.test_flying:
             print('taking off')
@@ -73,15 +82,23 @@ class DroneDataCollectionTest(Drone):
         else:
             print ('not test_flying')
 
+        avg_pos_dt = sum(self.pos_dt)/len(self.pos_dt)/1000.0
+        avg_vel_dt = sum(self.vel_dt)/len(self.vel_dt)/1000.0
+        pos_update_rate = 1.0/avg_pos_dt
+        vel_update_rate = 1.0/avg_vel_dt
+
         print('writing to file...')
         f = open(filename, write_mode)
         f.write('\n\nNew Info:\n')
-        f.write('pos_x: ' + str(self.pos_x))
-        f.write('pos_y: ' + str(self.pos_y))
-        f.write('pos_z: ' + str(self.pos_z))
-        f.write('vel_x: ' + str(self.vel_x))
-        f.write('vel_y: ' + str(self.vel_y))
-        f.write('vel_z: ' + str(self.vel_z))
+        f.write('pos_x = ' + str(self.pos_x) + '\n')
+        f.write('pos_y = ' + str(self.pos_y) + '\n')
+        f.write('pos_z = ' + str(self.pos_z) + '\n')
+        f.write('vel_x = ' + str(self.vel_x) + '\n')
+        f.write('vel_y = ' + str(self.vel_y) + '\n')
+        f.write('vel_z = ' + str(self.vel_z) + '\n')
+        f.write('pos update rate = ' + str(pos_update_rate) + '\n')
+        f.write('vel update rate = ' + str(vel_update_rate) + '\n')
+
 
 test_flying = True # set this to true if you want to fly
 mambo_addr = "e0:14:ad:f6:3d:fc" # BLE address
