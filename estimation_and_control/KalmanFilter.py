@@ -10,7 +10,7 @@
 import numpy as np
 
 class KalmanFilter:
-    def __init__(self, A, B, C, D, X0, U0):
+    def __init__(self, A, B, C, D, Rw, Rv, X0, U0):
         """
         Give matrices for an estimator of the form
 
@@ -33,9 +33,9 @@ class KalmanFilter:
         # TODO(abbielee): check initialization of below matrices
 
         # Initialize covariance matrices
-        self.P = self.init_p()                  # Error covariance
-        self.Rw = eye(self.X.shape()[0])        # Process noise covariance
-        self.Rv = eye(self.X.shape()[0])        # Measurement noise covariance
+        self.P = self.init_p()              # Error covariance
+        self.Rw = Rw                        # Process noise covariance
+        self.Rv = Rv                        # Measurement noise covariance
 
         # Initialize estimation gains
         self.L = self.update_L()
