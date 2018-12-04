@@ -84,8 +84,12 @@ class DroneDataCollectionTest(Drone):
 
         avg_pos_dt = sum(self.pos_dt)/len(self.pos_dt)/1000.0
         avg_vel_dt = sum(self.vel_dt)/len(self.vel_dt)/1000.0
-        pos_update_rate = 1.0/avg_pos_dt
-        vel_update_rate = 1.0/avg_vel_dt
+        try:
+            pos_update_rate = 1.0/avg_pos_dt
+            vel_update_rate = 1.0/avg_vel_dt
+        except:
+            pos_update_rate = 0
+            vel_update_rate = 0
 
         print('writing to file...')
         f = open(filename, write_mode)
