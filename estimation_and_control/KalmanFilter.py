@@ -1,9 +1,9 @@
 """
-  kalman_filter.py
+  KalmanFilter.py
   Abbie Lee | 16.30
 
-  Implementation of a Kalman filter for position estimation using the position
-  and velocity sensor readings.
+  Implementation of a Kalman filter for position estimation using the position,
+  velocity and quaternion sensor readings.
 
   Based on 16.30 Lec 19 Notes from Fall 2018
 """
