@@ -45,4 +45,4 @@ def target_dist(bb_size, plot = False):
         plt.ticklabel_format(style='sci', axis='x', scilimits=(0,0))
         plt.show()
 
-    return p(bb_size)
+    return power(bb_size, a, b)
