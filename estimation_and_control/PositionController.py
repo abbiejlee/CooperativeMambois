@@ -125,18 +125,63 @@ class MamboPositionController(PositionController):
                       [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.1999, 0.0, -2.5898, 0.0, 0.0],
                       [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.9755, 0.0, 0.0, 0.0, -2.1056, 0.0],
                       [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.1715]])
-        B = 10000 * np.array([[0.0, 0.0, 0.0, 0.0],
-                              [0.0, 0.0, 0.0, 0.0],
-                              [0.0, 0.0, 0.0, 0.0],
-                              [0.0, 0.0, 0.0, 0.0],
-                              [0.0, 0.0, 0.0, 0.0],
-                              [0.0, 0.0, 0.0, 0.0],
-                              [0.0, 0.0, 0.0, 0.0],
-                              [0.0, 0.0, 0.0, 0.0],
-                              [0.0015, 0.0, 0.0, 0.0],
-                              [0.0, 0.0, 0.0, 1.7157],
-                              [0.0, 0.0, 1.3949, 0.0],
-                              [0.0, 1.0, 0.0, 0.0]])
+        B = 10000 * np.array([[0.0, 0.0, 0.0],
+                              [0.0, 0.0, 0.0],
+                              [0.0, 0.0, 0.0],
+                              [0.0, 0.0, 0.0],
+                              [0.0, 0.0, 0.0],
+                              [0.0, 0.0, 0.0],
+                              [1.0, 0.0, 0.0],
+                              [0.0, 1.0, 0.0],
+                              [0.0, 0.0, 1.0],
+                              [0.0, 0.0, 0.0],
+                              [0.0, 0.0, 0.0],
+                              [0.0, 0.0, 0.0]])
         Q =
         R =
         super().__init__(A, B, Q, R)
+
+        self.max_input_power = [20, 20, 20, 20]
+        self.max_velocity = 1 # m/s, this is a guess.
+
+    def calculate_cmd_input(self):
+        """
+        Determine x y z velocities required to converge to the desired state
+        from the current state. These become roll, pitch, yaw "commands" in the
+        pyparrot fly_direct() method.
+
+        Our implementation drives a tracking error to zero. The generalized
+        formulation of the control law is:
+
+            u = -K_lqr * (x - x_d) + u_d
+
+        where x_d is desired state and u_d is the input required to maintain
+        the desired state. Inputs to the system are velocities, so the
+        u_d will be the zero vector to maintain hover at desired coordinates.
+
+        Final self.cmd_input will be normalized to the power range determined
+        for input to the pyparrot fly_direct() method.
+
+            returns [r, p, y, vm] : r = roll power
+                                    p = pitch power
+                                    y = yaw power
+                                    vm = vertical_movement power
+        """
+        x_er = np.subtract(self.current_state, self.desired_state)
+        u = np.dot(-1 *mself.K,  x_er)
+
+        self.cmd_input = u
+        yaw = 0 # shouldn't have to yaw for our purposes.
+
+        # constraint checks:
+        for i in range(len(u)):
+            if u[i] > self.max_velocity:
+                u[i] = self.max_velocity
+            if u[i] < -1 * self.max_velocity:
+                u[i] = -1 * self.max_velocity
+
+                # scaling command input to power maximums:
+                u[i] = u[i] * self.max_input_power[i]
+        self.cmd_input = [u[0], u[1], yaw, u[2]]
+
+        return self.get_current_cmd()
