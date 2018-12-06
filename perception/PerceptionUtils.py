@@ -24,16 +24,16 @@ def target_dist(bb_size, plot = False):
                         49215, 38115, 33741, 28665])
 
     # TODO(abbielee): find form of function
-    def func(x, a, b):
+    def power(x, a, b):
         """
-        Define form of function to fit to data
+        Define form of function to fit to data (power function)
+        f = ax^b
         """
-        return (a*x**2)**-1 + b
+        return a*x**b
 
 
-    params = curve_fit(func, meas_bb, meas_dist)
-    print(params)
-    p = np.poly1d(params[0])
+    params = curve_fit(power, meas_bb, meas_dist)
+    a, b = params[0]
 
     # plot fit
     if plot:
