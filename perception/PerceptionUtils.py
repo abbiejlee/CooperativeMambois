@@ -38,7 +38,11 @@ def target_dist(bb_size, plot = False):
     # plot fit
     if plot:
         xp = np.linspace(20000, 2000000, 1000)
-        _ = plt.plot(meas_bb, meas_dist, '.', xp, p(xp), '--')
+        _ = plt.plot(meas_bb, meas_dist, '.', xp, power(xp, a, b), '--')
+        plt.title("Distance from Target vs. Bounding Box Size")
+        plt.xlabel("Bounding Box Size (pixels)")
+        plt.ylabel("Distance from Target (in)")
+        plt.ticklabel_format(style='sci', axis='x', scilimits=(0,0))
         plt.show()
 
     return p(bb_size)
