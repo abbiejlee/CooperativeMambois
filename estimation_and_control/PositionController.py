@@ -4,7 +4,7 @@
     12/1/18
 
     Calculates control input required to converge to a desired xyz position
-    based on current state and drone dynamics. This is an LQR model.
+    based on current state and drone dynamics. This is an LQR problem.
     Control inputs are roll, pitch, yaw commands for the pyparrot interface.
     These commands are represented as xyz velocity commands. This is because
     at slow speeds, the quadrotor is roughly level to the ground and travels
@@ -33,8 +33,8 @@ class PositionController:
                             in the pyparrot module) that is permited in each
                             of the following commands:
                             [roll, pitch, yaw, vertical_movement]
-        cmd_input       : [r, p, y, vm] list of commands in the
-                            [roll, pitch, yaw, vertical_movement] formulation.
+        cmd_input       : list of commands (the u vector) for to get convergence
+                            to desired state from current state.
 
         Reference:
         https://github.com/ssloy/tutorials/blob/master/tutorials/pendulum/lqr.py
@@ -42,13 +42,12 @@ class PositionController:
         Solve the discrete LQR problem for the instance system.
         Return the solution to the Ricatti equation and the K gains matrix.
 
-        x[k+1] = A x[k] + B u[k]
-        cost = sum x[k].T*Q*x[k] + u[k].T*R*u[k]
+            x[k+1] = Ax[k] + Bu[k]
+            cost = sum x[k].T*Q*x[k] + u[k].T*R*u[k]
         """
         self.desired_state = []
         self.current_state = []
         self.cmd_input = []
-        self.max_input_power = [20, 20, 20, 20]
         self.A = A
         self.B = B
         self.Q = Q
@@ -89,13 +88,19 @@ class PositionController:
         from the current state. These become roll, pitch, yaw "commands" in the
         pyparrot fly_direct() method.
 
-            returns [r, p, y, vm] : r = roll power
-                                    p = pitch power
-                                    y = yaw power
-                                    vm = vertical_movement power
-        """
-        raise NotImplementedError
+        Our implementation drives a tracking error to zero. The generalized
+        formulation of the control law is:
 
+            u = -K_lqr * (x - x_d) + u_d
+
+        where x_d is desired state and u_d is the input required to maintain
+        the desired state. Inputs to the system are velocities, so the
+        u_d will be the zero vector to maintain hover at desired coordinates.
+        """
+        x_er = np.subtract(self.current_state, self.desired_state)
+        u = np.dot(-1 *mself.K,  x_er)
+
+        self.cmd_input = u
         return self.get_current_cmd()
 
     def get_current_cmd(self):
