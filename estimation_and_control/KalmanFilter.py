@@ -94,43 +94,23 @@ class MamboKalman(KalmanFilter):
         """
         Initializes KalmanFilter for a parrot mambo
 
-        Model based on dynamics equations in Pset 2 and linearized model
-        in Lab 3 from 16.30 Fall 2018
+        Model is discrete-time and is based on a simplified view of the drone
+        where input is linear velocity and the states are position only.
+        The system is fully observable; we use the position estimation of the
+        drone as a "sensor".
 
-        states: x y z yaw pitch roll xdot ydot zdot p q r
+        states: x y z (coordinate positions)
+        inputs: u v w (coordinate velocities)
         """
-        A = np.array([[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-                      [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0],
-                      [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0],
-                      [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0],
-                      [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0],
-                      [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0],
-                      [0.0, 0.0, 0.0, 0.0, -9.81, 0.0, -.064, 0.0, 0.0, 0.0, .1382, 0.0],
-                      [0.0, 0.0, 0.0, 0.0, 0.0, 9.81, 0.0, -0.64, 0.0, -.1382, 0.0, 0.0],
-                      [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-                      [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.1999, 0.0, -2.5898, 0.0, 0.0],
-                      [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.9755, 0.0, 0.0, 0.0, -2.1056, 0.0],
-                      [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.1715]])
-
-        B = 10000 * np.array([[0.0, 0.0, 0.0, 0.0],
-                              [0.0, 0.0, 0.0, 0.0],
-                              [0.0, 0.0, 0.0, 0.0],
-                              [0.0, 0.0, 0.0, 0.0],
-                              [0.0, 0.0, 0.0, 0.0],
-                              [0.0, 0.0, 0.0, 0.0],
-                              [0.0, 0.0, 0.0, 0.0],
-                              [0.0, 0.0, 0.0, 0.0],
-                              [0.0015, 0.0, 0.0, 0.0],
-                              [0.0, 0.0, 0.0, 1.7157],
-                              [0.0, 0.0, 1.3949, 0.0],
-                              [0.0, 1.0, 0.0, 0.0]])
-
-        C = np.eye(12)
-
-        D = np.zeros((12, 4))
-
+        A = np.array([[1.0, 0.0, 0.0],
+                      [0.0, 1.0, 0.0],
+                      [0.0, 0.0, 1.0]])
+        B = np.array([[self.dt, 0.0, 0.0],
+                      [0.0, self.dt, 0.0],
+                      [0.0, 0.0, self.dt]])
+        C = np.eye(3)
+        D = np.zeros((3, 3))
         Rw = np.array([])
-
         Rv = np.array([])
 
         KalmanFilter.__init__(A, B, C, D, Rw, Rv, X0, U0)
