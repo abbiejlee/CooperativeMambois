@@ -118,21 +118,27 @@ class MamboPositionController(PositionController):
         matrices.
         Change Q and R to change weights on the states and inputs.
         """
-        A = np.array([1.0, 0.0, 0.0, ])
-        B = 10000 * np.array([[0.0, 0.0, 0.0],
-                              [0.0, 0.0, 0.0],
-                              [0.0, 0.0, 0.0],
-                              [0.0, 0.0, 0.0],
-                              [0.0, 0.0, 0.0],
-                              [0.0, 0.0, 0.0],
-                              [1.0, 0.0, 0.0],
-                              [0.0, 1.0, 0.0],
-                              [0.0, 0.0, 1.0],
-                              [0.0, 0.0, 0.0],
-                              [0.0, 0.0, 0.0],
-                              [0.0, 0.0, 0.0]])
-        Q = np.array([])
-        R = np.array([])
+        A = np.array([[1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                      [0.0, 1.0, 0.0, 0.0, 0.0, 0.0],
+                      [0.0, 0.0, 1.0, 0.0, 0.0, 0.0],
+                      [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                      [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                      [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]])
+        B = np.array([[0.0, 0.0, 0.0],
+                      [0.0, 0.0, 0.0],
+                      [0.0, 0.0, 0.0],
+                      [1.0, 0.0, 0.0],
+                      [0.0, 1.0, 0.0],
+                      [0.0, 0.0, 1.0]])
+        Q = np.array([[1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                      [0.0, 1.0, 0.0, 0.0, 0.0, 0.0],
+                      [0.0, 0.0, 1.0, 0.0, 0.0, 0.0],
+                      [0.0, 0.0, 0.0, 0.5, 0.0, 0.0],
+                      [0.0, 0.0, 0.0, 0.0, 0.5, 0.0],
+                      [0.0, 0.0, 0.0, 0.0, 0.0, 0.5]])
+        R = 0.25 * np.array([[1.0, 0.0, 0.0],
+                             [0.0, 1.0, 0.0],
+                             [0.0, 0.0, 1.0]])
         super().__init__(A, B, Q, R)
 
         self.max_input_power = [20, 20, 20, 20]
@@ -162,7 +168,7 @@ class MamboPositionController(PositionController):
                                     vm = vertical_movement power
         """
         x_er = np.subtract(self.current_state, self.desired_state)
-        u = np.dot(-1 *mself.K,  x_er)
+        u = np.dot(-1 *self.K,  x_er)
 
         self.cmd_input = u
         yaw = 0 # shouldn't have to yaw for our purposes.

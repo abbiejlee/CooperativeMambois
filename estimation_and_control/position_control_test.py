@@ -12,7 +12,7 @@ from Drone import Drone
 from PositionController import MamboPositionController
 
 class PosCtrlDrone(Drone):
-    def __init__(test_flying, mambo_addr, use_wifi, use_vision):
+    def __init__(self, test_flying, mambo_addr, use_wifi, use_vision):
         super().__init__(test_flying, mambo_addr, use_wifi, use_vision)
         self.controller = MamboPositionController()
         self.current_state = []
