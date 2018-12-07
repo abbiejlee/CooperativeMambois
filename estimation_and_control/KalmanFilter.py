@@ -102,6 +102,7 @@ class MamboKalman(KalmanFilter):
         states: x y z (coordinate positions)
         inputs: u v w (coordinate velocities)
         """
+        self.dt = 0.5 # sample time in seconds. 2hz over WiFi.
         A = np.array([[1.0, 0.0, 0.0],
                       [0.0, 1.0, 0.0],
                       [0.0, 0.0, 1.0]])
