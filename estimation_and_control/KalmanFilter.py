@@ -85,7 +85,8 @@ class KalmanFilter:
         Given sensor measurements and control input, return the state estimate
         """
         self.update_L()
-        self.update_estim()
+        self.U = U
+        self.update_estim(Y)
 
         return self.X
 
