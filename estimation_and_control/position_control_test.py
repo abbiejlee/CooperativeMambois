@@ -15,19 +15,17 @@ class PosCtrlDrone(Drone):
     def __init__(self, test_flying, mambo_addr, use_wifi, use_vision):
         super().__init__(test_flying, mambo_addr, use_wifi, use_vision)
         self.controller = MamboPositionController()
-        self.current_state = []
-        self.desired_waypoint = [1, 0, 1]
-        self.desired_state = self.desired_waypoint + [0, 0, 0]
+        self.current_state = [] # meters
+        self.desired_state = [1, 0, 1] # meters
         self.eps = 0.08
+        self.start_measure = False
 
     def sensor_cb(self, args):
-        self.current_state = [self.mambo.sensors.sensor_dict['DronePosition_posx'],
-                              self.mambo.sensors.sensor_dict['DronePosition_posy'],
-                              self.mambo.sensors.sensor_dict['DronePosition_posz'],
-                              self.mambo.sensors.speed_x,
-                              self.mambo.sensors.speed_y,
-                              self.mambo.sensors.speed_z]
-        self.controller.set_current_state(self.current_state)
+        if self.start_measure:
+            self.current_state = [self.mambo.sensors.sensors_dict['DronePosition_posx']/100,
+                                  self.mambo.sensors.sensors_dict['DronePosition_posy']/100,
+                                  self.mambo.sensors.sensors_dict['DronePosition_posz']/-100]
+            self.controller.set_current_state(self.current_state)
 
     def vision_cb(self, args):
         pass
@@ -45,19 +43,25 @@ class PosCtrlDrone(Drone):
                 print('sensor calib:')
                 while self.mambo.sensors.speed_ts == 0:
                     continue
+                self.start_measure = True
+
+                print('getting first state')
+                while self.current_state == []:
+                    continue
 
                 self.controller.set_desired_state(self.desired_state)
-                print('flying to position ', self.desired_waypoint)
+                print('flying to position ', self.desired_state)
                 while ( (self.current_state[0] - self.desired_state[0])**2 +
                         (self.current_state[1] - self.desired_state[1])**2 +
-                        (self.current_state[2] - self.desired_state[2])**2 )**0.5 > self.esp:
+                        (self.current_state[2] - self.desired_state[2])**2 )**0.5 > self.eps:
                     cmd = self.controller.calculate_cmd_input()
-                    self.mambo.fly_direct(roll=cmd[0],
-                                            pitch=cmd[1],
+                    print('current state:',self.current_state)
+                    print('cmd:          ',cmd)
+                    self.mambo.fly_direct(roll=cmd[1],
+                                            pitch=cmd[0],
                                             yaw=cmd[2],
                                             vertical_movement=cmd[3],
                                             duration=None)
-                    print('cmd:',cmd)
             print('landing')
             self.mambo.safe_land(5)
 
