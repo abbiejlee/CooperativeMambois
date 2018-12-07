@@ -64,7 +64,7 @@ class PositionController:
         """
         return scipy.linalg.eig(self.A-self.B*self.K)
 
-    def get_current_cmd(self):
+    def get_current_input(self):
         """
         Return the current command input to the quadrotor.
         This is stored as a member of the PositionController object and
@@ -106,10 +106,10 @@ class PositionController:
         u_d will be the zero vector to maintain hover at desired coordinates.
         """
         x_er = np.subtract(self.current_state, self.desired_state)
-        u = np.dot(-1 *mself.K,  x_er)
+        u = np.dot(-1 *mself.K,  x_er).tolist()[0]
 
         self.cmd_input = u
-        return self.get_current_cmd()
+        return self.get_current_input()
 
 class MamboPositionController(PositionController):
     def __init__(self):
@@ -166,8 +166,9 @@ class MamboPositionController(PositionController):
                                     vm = vertical_movement power
         """
         x_er = np.subtract(self.current_state, self.desired_state)
-        u = np.dot(-1 *self.K,  x_er).tolist()[0] # python list structure
+        u = np.dot(-1 *self.K, x_er).tolist()[0] # python list structure
         yaw = 0 # shouldn't have to yaw for our purposes.
+        u_scaled = [0 for i in range(len(u))]
 
         # constraint checks:
         for i in range(len(u)):
@@ -177,7 +178,7 @@ class MamboPositionController(PositionController):
                 u[i] = -1 * self.max_velocity
 
             # scaling command input to power maximums:
-            u[i] = u[i] * self.max_input_power[i]
+            u_scaled[i] = u[i] / self.max_velocity * self.max_input_power[i]
         self.cmd_input = [u[0], u[1], yaw, u[2]]
 
         return self.get_current_cmd()
