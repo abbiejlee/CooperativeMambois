@@ -64,6 +64,14 @@ class PositionController:
         """
         return scipy.linalg.eig(self.A-self.B*self.K)
 
+    def get_current_cmd(self):
+        """
+        Return the current command input to the quadrotor.
+        This is stored as a member of the PositionController object and
+        is recalculated after every desired/current state update.
+        """
+        return self.cmd_input
+
     def set_current_state(self, current_state):
         """
         Called at every state update in a main loop.
@@ -103,46 +111,36 @@ class PositionController:
         self.cmd_input = u
         return self.get_current_cmd()
 
-    def get_current_cmd(self):
-        """
-        Return the current command input to the quadrotor.
-        This is stored as a member of the PositionController object and
-        is recalculated after every desired/current state update.
-        """
-        return self.cmd_input
-
 class MamboPositionController(PositionController):
     def __init__(self):
         """
         Initializes the PositionController with Mambo system and weight
         matrices.
         Change Q and R to change weights on the states and inputs.
+        The Mambo system is modeled the following way:
+            x = [x_pos, y_pos, z_pos]'
+            u = [x_vel, y_vel, z_vel]'
+            sensing x; fully observable system
         """
-        A = np.array([[1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-                      [0.0, 1.0, 0.0, 0.0, 0.0, 0.0],
-                      [0.0, 0.0, 1.0, 0.0, 0.0, 0.0],
-                      [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-                      [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-                      [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]])
-        B = np.array([[0.0, 0.0, 0.0],
-                      [0.0, 0.0, 0.0],
-                      [0.0, 0.0, 0.0],
-                      [1.0, 0.0, 0.0],
+        self.dt = 0.5 # seconds; sample time (2hz on WiFi)
+
+        # This system is in discrete time:
+        A = np.array([[1.0, 0.0, 0.0],
                       [0.0, 1.0, 0.0],
                       [0.0, 0.0, 1.0]])
-        Q = np.array([[1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-                      [0.0, 1.0, 0.0, 0.0, 0.0, 0.0],
-                      [0.0, 0.0, 1.0, 0.0, 0.0, 0.0],
-                      [0.0, 0.0, 0.0, 0.5, 0.0, 0.0],
-                      [0.0, 0.0, 0.0, 0.0, 0.5, 0.0],
-                      [0.0, 0.0, 0.0, 0.0, 0.0, 0.5]])
-        R = 0.25 * np.array([[1.0, 0.0, 0.0],
-                             [0.0, 1.0, 0.0],
-                             [0.0, 0.0, 1.0]])
+        B = np.array([[self.dt, 0.0, 0.0],
+                      [0.0, self.dt, 0.0],
+                      [0.0, 0.0, self.dt]])
+        Q = np.array([[1.0, 0.0, 0.0],
+                      [0.0, 1.0, 0.0],
+                      [0.0, 0.0, 0.5]])
+        R = np.array([[1.0, 0.0, 0.0],
+                      [0.0, 1.0, 0.0],
+                      [0.0, 0.0, 1.0]])
         super().__init__(A, B, Q, R)
 
         self.max_input_power = [20, 20, 20, 20]
-        self.max_velocity = 1 # m/s, this is a guess.
+        self.max_velocity = 1.0 # m/s, this is a guess.
 
     def calculate_cmd_input(self):
         """
@@ -168,9 +166,7 @@ class MamboPositionController(PositionController):
                                     vm = vertical_movement power
         """
         x_er = np.subtract(self.current_state, self.desired_state)
-        u = np.dot(-1 *self.K,  x_er)
-
-        self.cmd_input = u
+        u = np.dot(-1 *self.K,  x_er).tolist()[0] # python list structure
         yaw = 0 # shouldn't have to yaw for our purposes.
 
         # constraint checks:
@@ -180,8 +176,18 @@ class MamboPositionController(PositionController):
             if u[i] < -1 * self.max_velocity:
                 u[i] = -1 * self.max_velocity
 
-                # scaling command input to power maximums:
-                u[i] = u[i] * self.max_input_power[i]
+            # scaling command input to power maximums:
+            u[i] = u[i] * self.max_input_power[i]
         self.cmd_input = [u[0], u[1], yaw, u[2]]
 
         return self.get_current_cmd()
+
+# test:
+
+if __name__ == "__main__":
+    mambo = MamboPositionController()
+
+    mambo.set_desired_state([1, 2, 1])
+    mambo.set_current_state([0, 0, 1])
+    u = mambo.calculate_cmd_input()
+    print('u after:',u)
