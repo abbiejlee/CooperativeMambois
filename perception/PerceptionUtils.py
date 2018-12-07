@@ -8,6 +8,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 
+
+
 def target_dist(bb_size, plot = False):
     """
     Given a bounding box size, returns estimated distance to target. Measurements
@@ -23,7 +25,6 @@ def target_dist(bb_size, plot = False):
     meas_bb = np.array([1272789, 613795, 304475, 206437, 123487, 75603, 63869,
                         49215, 38115, 33741, 28665])
 
-    # TODO(abbielee): find form of function
     def power(x, a, b):
         """
         Define form of function to fit to data (power function)
@@ -31,9 +32,10 @@ def target_dist(bb_size, plot = False):
         """
         return a*x**b
 
+    # params = curve_fit(power, meas_bb, meas_dist)
+    # a, b = params[0]
 
-    params = curve_fit(power, meas_bb, meas_dist)
-    a, b = params[0]
+    a, b = 31508.66035098102, -0.552683249829304
 
     # plot fit
     if plot:
