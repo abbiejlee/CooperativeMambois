@@ -10,11 +10,14 @@
 
 from Drone import Drone
 from PositionController import MamboPositionController
+from KalmanFilter import MamboKalman
 
 class PosCtrlDrone(Drone):
     def __init__(self, test_flying, mambo_addr, use_wifi, use_vision):
         super().__init__(test_flying, mambo_addr, use_wifi, use_vision)
         self.controller = MamboPositionController()
+        self.kalmanfilter = MamboKalman()
+        self.current_vels = [] # for use with KalmanFilter (used as u (input))
         self.current_state = [] # meters
         self.desired_state = [1, 0, 1] # meters
         self.eps = 0.08
@@ -22,9 +25,14 @@ class PosCtrlDrone(Drone):
 
     def sensor_cb(self, args):
         if self.start_measure:
-            self.current_state = [self.mambo.sensors.sensors_dict['DronePosition_posx']/100,
-                                  self.mambo.sensors.sensors_dict['DronePosition_posy']/100,
-                                  self.mambo.sensors.sensors_dict['DronePosition_posz']/-100]
+            self.current_measurement = [self.mambo.sensors.sensors_dict['DronePosition_posx']/100,
+                                        self.mambo.sensors.sensors_dict['DronePosition_posy']/100,
+                                        self.mambo.sensors.sensors_dict['DronePosition_posz']/-100]
+            self.current_vels = [self.mambo.sensors.speed_x,
+                                 self.mambo.sensors.speed_y,
+                                 self.mambo.sensors.speed_z]
+            self.current_state = self.kalmanfilter.get_state_estimate(self.current_measurement,
+                                                                        self.current_vels)
             self.controller.set_current_state(self.current_state)
 
     def vision_cb(self, args):
