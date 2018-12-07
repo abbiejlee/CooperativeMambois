@@ -139,6 +139,8 @@ class DetectionDrone(Drone):
                 elif jump:
                     break
 
+            self.mambo.smart_sleep(2)
+            
         self.fly_away()
         print('landing')
         self.mambo.safe_land(5)
@@ -252,6 +254,7 @@ class ShooterDrone(Drone):
             shots_fired = self.mambo.fire_gun()
             if not shots_fired:
                 print('failed to shoot')
+            self.mambo.smart_sleep(2)
 
         self.fly_away()
         print('landing')
