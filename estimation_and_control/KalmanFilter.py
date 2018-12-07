@@ -112,6 +112,8 @@ class MamboKalman(KalmanFilter):
         C = np.eye(3)
         D = np.zeros((3, 3))
         Rw = np.eye(3)
-        Rv = np.array([])
+        Rv = np.array([[1.0, 0.0, 0.0],
+                       [0.0, 1.0, 0.0],
+                       [0.0, 0.0, 0.5],])
 
         super().__init__(A, B, C, D, Rw, Rv, X0, U0)
