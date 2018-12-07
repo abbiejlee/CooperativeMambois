@@ -85,7 +85,8 @@ class KalmanFilter:
         Given sensor measurements and control input, return the state estimate
         """
         self.update_L()
-        self.update_estim()
+        self.U = U
+        self.update_estim(Y)
 
         return self.X
 
@@ -99,10 +100,18 @@ class MamboKalman(KalmanFilter):
         The system is fully observable; we use the position estimation of the
         drone as a "sensor".
 
+<<<<<<< HEAD
         states: x y z (coordinate positions)
         inputs: u v w (coordinate velocities)
         """
         self.dt = 0.5 # sample time in seconds. 2hz over WiFi.
+=======
+        states = [x_pos y_pos z_pos]
+        inputs = [x_vel y_vel z_vel]
+        """
+        self.dt = 0.5 # sample time in seconds. 2hz over WiFi.
+
+>>>>>>> abbielee/mambo_estim
         A = np.array([[1.0, 0.0, 0.0],
                       [0.0, 1.0, 0.0],
                       [0.0, 0.0, 1.0]])
@@ -111,7 +120,16 @@ class MamboKalman(KalmanFilter):
                       [0.0, 0.0, self.dt]])
         C = np.eye(3)
         D = np.zeros((3, 3))
+<<<<<<< HEAD
         Rw = np.array([])
         Rv = np.array([])
 
         KalmanFilter.__init__(A, B, C, D, Rw, Rv, X0, U0)
+=======
+        Rw = np.eye(3)
+        Rv = np.array([[1.0, 0.0, 0.0],
+                       [0.0, 1.0, 0.0],
+                       [0.0, 0.0, 0.5],])
+
+        super().__init__(A, B, C, D, Rw, Rv, X0, U0)
+>>>>>>> abbielee/mambo_estim

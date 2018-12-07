@@ -9,7 +9,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.1006661206483841
@@ -62,7 +62,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.2837231755256653
@@ -115,7 +115,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.2837231755256653
@@ -168,7 +168,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.2837231755256653
@@ -221,7 +221,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.2837231755256653
@@ -274,7 +274,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.2837231755256653
@@ -327,7 +327,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.2837231755256653
@@ -380,7 +380,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.2837231755256653
@@ -433,7 +433,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.2837231755256653
@@ -486,7 +486,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.2837231755256653
@@ -539,7 +539,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.2837231755256653
@@ -592,7 +592,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.25504928827285767
@@ -645,7 +645,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.25504928827285767
@@ -698,7 +698,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.25504928827285767
@@ -751,7 +751,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.25504928827285767
@@ -804,7 +804,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.25504928827285767
@@ -857,7 +857,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.25504928827285767
@@ -910,7 +910,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.25504928827285767
@@ -963,7 +963,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.25504928827285767
@@ -1016,7 +1016,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.25504928827285767
@@ -1069,7 +1069,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.25504928827285767
@@ -1122,7 +1122,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.24656662344932556
@@ -1175,7 +1175,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.24656662344932556
@@ -1228,7 +1228,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.24656662344932556
@@ -1281,7 +1281,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.24656662344932556
@@ -1334,7 +1334,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.24656662344932556
@@ -1387,7 +1387,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.24656662344932556
@@ -1440,7 +1440,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.24656662344932556
@@ -1493,7 +1493,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.24656662344932556
@@ -1546,7 +1546,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.24656662344932556
@@ -1599,7 +1599,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.39714038372039795
@@ -1652,7 +1652,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.39714038372039795
@@ -1705,7 +1705,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.39714038372039795
@@ -1758,7 +1758,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.39714038372039795
@@ -1811,7 +1811,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.39714038372039795
@@ -1864,7 +1864,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.39714038372039795
@@ -1917,7 +1917,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.39714038372039795
@@ -1970,7 +1970,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.39714038372039795
@@ -2023,7 +2023,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.39714038372039795
@@ -2076,7 +2076,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.39714038372039795
@@ -2129,7 +2129,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.39714038372039795
@@ -2182,7 +2182,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.39714038372039795
@@ -2235,7 +2235,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.39714038372039795
@@ -2288,7 +2288,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.39714038372039795
@@ -2341,7 +2341,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.39714038372039795
@@ -2394,7 +2394,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.39714038372039795
@@ -2447,7 +2447,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.39714038372039795
@@ -2500,7 +2500,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.39714038372039795
@@ -2553,7 +2553,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.6192227602005005
@@ -2606,7 +2606,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.6192227602005005
@@ -2659,7 +2659,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.6192227602005005
@@ -2712,7 +2712,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.6192227602005005
@@ -2765,7 +2765,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.6192227602005005
@@ -2818,7 +2818,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.6192227602005005
@@ -2871,7 +2871,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.6192227602005005
@@ -2924,7 +2924,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.6192227602005005
@@ -2977,7 +2977,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.6192227602005005
@@ -3030,7 +3030,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.6192227602005005
@@ -3083,7 +3083,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.0845521688461304
@@ -3136,7 +3136,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.0845521688461304
@@ -3189,7 +3189,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.0845521688461304
@@ -3242,7 +3242,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.0845521688461304
@@ -3295,7 +3295,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.0845521688461304
@@ -3348,7 +3348,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.0845521688461304
@@ -3401,7 +3401,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.0845521688461304
@@ -3454,7 +3454,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.0845521688461304
@@ -3507,7 +3507,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.0845521688461304
@@ -3560,7 +3560,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.5814540386199951
@@ -3613,7 +3613,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.5814540386199951
@@ -3666,7 +3666,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.5814540386199951
@@ -3719,7 +3719,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.5814540386199951
@@ -3772,7 +3772,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.5814540386199951
@@ -3825,7 +3825,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.5814540386199951
@@ -3878,7 +3878,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.5814540386199951
@@ -3931,7 +3931,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.5814540386199951
@@ -3984,7 +3984,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.5814540386199951
@@ -4037,7 +4037,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.5814540386199951
@@ -4090,7 +4090,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9821789264678955
@@ -4143,7 +4143,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9821789264678955
@@ -4196,7 +4196,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9821789264678955
@@ -4249,7 +4249,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9821789264678955
@@ -4302,7 +4302,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9821789264678955
@@ -4355,7 +4355,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9821789264678955
@@ -4408,7 +4408,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9821789264678955
@@ -4461,7 +4461,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9821789264678955
@@ -4514,7 +4514,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9821789264678955
@@ -4567,7 +4567,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.271071434020996
@@ -4620,7 +4620,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.271071434020996
@@ -4673,7 +4673,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.271071434020996
@@ -4726,7 +4726,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.271071434020996
@@ -4779,7 +4779,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.271071434020996
@@ -4832,7 +4832,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.271071434020996
@@ -4885,7 +4885,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.271071434020996
@@ -4938,7 +4938,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.271071434020996
@@ -4991,7 +4991,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.271071434020996
@@ -5044,7 +5044,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.271071434020996
@@ -5097,7 +5097,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.5005359649658203
@@ -5150,7 +5150,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.5005359649658203
@@ -5203,7 +5203,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.5005359649658203
@@ -5256,7 +5256,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.5005359649658203
@@ -5309,7 +5309,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.5005359649658203
@@ -5362,7 +5362,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.5005359649658203
@@ -5415,7 +5415,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.5005359649658203
@@ -5468,7 +5468,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.5005359649658203
@@ -5521,7 +5521,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.5005359649658203
@@ -5574,7 +5574,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.514312744140625
@@ -5627,7 +5627,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.514312744140625
@@ -5680,7 +5680,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.514312744140625
@@ -5733,7 +5733,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.514312744140625
@@ -5786,7 +5786,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.514312744140625
@@ -5839,7 +5839,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.514312744140625
@@ -5892,7 +5892,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.514312744140625
@@ -5945,7 +5945,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.514312744140625
@@ -5998,7 +5998,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.514312744140625
@@ -6051,7 +6051,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.449620008468628
@@ -6104,7 +6104,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.449620008468628
@@ -6157,7 +6157,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.449620008468628
@@ -6210,7 +6210,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.449620008468628
@@ -6263,7 +6263,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.449620008468628
@@ -6316,7 +6316,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.449620008468628
@@ -6369,7 +6369,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.449620008468628
@@ -6422,7 +6422,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.449620008468628
@@ -6475,7 +6475,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.449620008468628
@@ -6528,7 +6528,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.449620008468628
@@ -6581,7 +6581,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.196049690246582
@@ -6634,7 +6634,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.196049690246582
@@ -6687,7 +6687,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.196049690246582
@@ -6740,7 +6740,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.196049690246582
@@ -6793,7 +6793,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.196049690246582
@@ -6846,7 +6846,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.196049690246582
@@ -6899,7 +6899,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.196049690246582
@@ -6952,7 +6952,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.196049690246582
@@ -7005,7 +7005,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.196049690246582
@@ -7058,7 +7058,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9180506467819214
@@ -7111,7 +7111,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9180506467819214
@@ -7164,7 +7164,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9180506467819214
@@ -7217,7 +7217,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9180506467819214
@@ -7270,7 +7270,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9180506467819214
@@ -7323,7 +7323,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9180506467819214
@@ -7376,7 +7376,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9180506467819214
@@ -7429,7 +7429,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9180506467819214
@@ -7482,7 +7482,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9180506467819214
@@ -7535,7 +7535,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9180506467819214
@@ -7588,7 +7588,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9180506467819214
@@ -7641,7 +7641,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9180506467819214
@@ -7694,7 +7694,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9180506467819214
@@ -7747,7 +7747,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9180506467819214
@@ -7800,7 +7800,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9180506467819214
@@ -7853,7 +7853,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9180506467819214
@@ -7906,7 +7906,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.9180506467819214
@@ -7959,7 +7959,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.578848958015442
@@ -8012,7 +8012,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.578848958015442
@@ -8065,7 +8065,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.578848958015442
@@ -8118,7 +8118,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.578848958015442
@@ -8171,7 +8171,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.578848958015442
@@ -8224,7 +8224,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.578848958015442
@@ -8277,7 +8277,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.578848958015442
@@ -8330,7 +8330,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.578848958015442
@@ -8383,7 +8383,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.578848958015442
@@ -8436,7 +8436,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.578848958015442
@@ -8489,7 +8489,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.0690772533416748
@@ -8542,7 +8542,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.0690772533416748
@@ -8595,7 +8595,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.0690772533416748
@@ -8648,7 +8648,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.0690772533416748
@@ -8701,7 +8701,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.0690772533416748
@@ -8754,7 +8754,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.0690772533416748
@@ -8807,7 +8807,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.0690772533416748
@@ -8860,7 +8860,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.0690772533416748
@@ -8913,7 +8913,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.0690772533416748
@@ -8966,7 +8966,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.46617650985717773
@@ -9019,7 +9019,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.46617650985717773
@@ -9072,7 +9072,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.46617650985717773
@@ -9125,7 +9125,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.46617650985717773
@@ -9178,7 +9178,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.46617650985717773
@@ -9231,7 +9231,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.46617650985717773
@@ -9284,7 +9284,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.46617650985717773
@@ -9337,7 +9337,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.46617650985717773
@@ -9390,7 +9390,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.46617650985717773
@@ -9443,7 +9443,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.08307427912950516
@@ -9496,7 +9496,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.08307427912950516
@@ -9549,7 +9549,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.08307427912950516
@@ -9602,7 +9602,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.08307427912950516
@@ -9655,7 +9655,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.08307427912950516
@@ -9708,7 +9708,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.08307427912950516
@@ -9761,7 +9761,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.08307427912950516
@@ -9814,7 +9814,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.08307427912950516
@@ -9867,7 +9867,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.08307427912950516
@@ -9920,7 +9920,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: -9.351388143841177e-05
@@ -9973,7 +9973,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: -9.351388143841177e-05
@@ -10026,7 +10026,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: -9.351388143841177e-05
@@ -10079,7 +10079,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: -9.351388143841177e-05
@@ -10132,7 +10132,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: -9.351388143841177e-05
@@ -10185,7 +10185,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: -9.351388143841177e-05
@@ -10238,7 +10238,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: -9.351388143841177e-05
@@ -10291,7 +10291,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: -9.351388143841177e-05
@@ -10344,7 +10344,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: -9.351388143841177e-05
@@ -10397,7 +10397,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: -9.351388143841177e-05
@@ -10450,7 +10450,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.35158711671829224
@@ -10503,7 +10503,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.35158711671829224
@@ -10556,7 +10556,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.35158711671829224
@@ -10609,7 +10609,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.35158711671829224
@@ -10662,7 +10662,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.35158711671829224
@@ -10715,7 +10715,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.35158711671829224
@@ -10768,7 +10768,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.35158711671829224
@@ -10821,7 +10821,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.35158711671829224
@@ -10874,7 +10874,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 0.35158711671829224
@@ -10927,7 +10927,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.1045761108398438
@@ -10980,7 +10980,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.1045761108398438
@@ -11033,7 +11033,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.1045761108398438
@@ -11086,7 +11086,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.1045761108398438
@@ -11139,7 +11139,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.1045761108398438
@@ -11192,7 +11192,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.1045761108398438
@@ -11245,7 +11245,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.1045761108398438
@@ -11298,7 +11298,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.1045761108398438
@@ -11351,7 +11351,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 1.1045761108398438
@@ -11404,7 +11404,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.153860330581665
@@ -11457,7 +11457,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.153860330581665
@@ -11510,7 +11510,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.153860330581665
@@ -11563,7 +11563,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.153860330581665
@@ -11616,7 +11616,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.153860330581665
@@ -11669,7 +11669,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.153860330581665
@@ -11722,7 +11722,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.153860330581665
@@ -11775,7 +11775,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.153860330581665
@@ -11828,7 +11828,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 2.153860330581665
@@ -11881,7 +11881,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 3.748850107192993
@@ -11934,7 +11934,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 3.748850107192993
@@ -11987,7 +11987,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 3.748850107192993
@@ -12040,7 +12040,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 3.748850107192993
@@ -12093,7 +12093,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 3.748850107192993
@@ -12146,7 +12146,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 3.748850107192993
@@ -12199,7 +12199,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 3.748850107192993
@@ -12252,7 +12252,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 3.748850107192993
@@ -12305,7 +12305,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 3.748850107192993
@@ -12358,7 +12358,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 3.748850107192993
@@ -12411,7 +12411,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 5.74367618560791
@@ -12464,7 +12464,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 5.74367618560791
@@ -12517,7 +12517,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 5.74367618560791
@@ -12570,7 +12570,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 5.74367618560791
@@ -12623,7 +12623,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 5.74367618560791
@@ -12676,7 +12676,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 5.74367618560791
@@ -12729,7 +12729,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 5.74367618560791
@@ -12782,7 +12782,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 5.74367618560791
@@ -12835,7 +12835,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 5.74367618560791
@@ -12888,7 +12888,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 5.74367618560791
@@ -12941,7 +12941,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 5.74367618560791
@@ -12994,7 +12994,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 8.264294624328613
@@ -13047,7 +13047,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 8.264294624328613
@@ -13100,7 +13100,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 8.264294624328613
@@ -13153,7 +13153,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 8.264294624328613
@@ -13206,7 +13206,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 8.264294624328613
@@ -13259,7 +13259,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 8.264294624328613
@@ -13312,7 +13312,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 8.264294624328613
@@ -13365,7 +13365,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 8.264294624328613
@@ -13418,7 +13418,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 8.264294624328613
@@ -13471,7 +13471,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 8.264294624328613
@@ -13524,7 +13524,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 8.264294624328613
@@ -13577,7 +13577,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 8.264294624328613
@@ -13630,7 +13630,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 8.264294624328613
@@ -13683,7 +13683,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 8.264294624328613
@@ -13736,7 +13736,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 8.264294624328613
@@ -13789,7 +13789,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 11.064236640930176
@@ -13842,7 +13842,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 11.064236640930176
@@ -13895,7 +13895,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 11.064236640930176
@@ -13948,7 +13948,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 11.064236640930176
@@ -14001,7 +14001,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 11.064236640930176
@@ -14054,7 +14054,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 11.064236640930176
@@ -14107,7 +14107,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 11.064236640930176
@@ -14160,7 +14160,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 11.064236640930176
@@ -14213,7 +14213,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 11.064236640930176
@@ -14266,7 +14266,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 12.406821250915527
@@ -14319,7 +14319,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 12.406821250915527
@@ -14372,7 +14372,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 12.406821250915527
@@ -14425,7 +14425,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 12.406821250915527
@@ -14478,7 +14478,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 12.406821250915527
@@ -14531,7 +14531,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 12.406821250915527
@@ -14584,7 +14584,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 12.406821250915527
@@ -14637,7 +14637,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 12.406821250915527
@@ -14690,7 +14690,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 12.406821250915527
@@ -14743,7 +14743,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 12.406821250915527
@@ -14796,7 +14796,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 12.406821250915527
@@ -14849,7 +14849,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 12.999908447265625
@@ -14902,7 +14902,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 12.999908447265625
@@ -14955,7 +14955,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 12.999908447265625
@@ -15008,7 +15008,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 12.999908447265625
@@ -15061,7 +15061,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 12.999908447265625
@@ -15114,7 +15114,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 12.999908447265625
@@ -15167,7 +15167,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 12.999908447265625
@@ -15220,7 +15220,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 12.999908447265625
@@ -15273,7 +15273,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 12.999908447265625
@@ -15326,7 +15326,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 13.897846221923828
@@ -15379,7 +15379,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 13.897846221923828
@@ -15432,7 +15432,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 13.897846221923828
@@ -15485,7 +15485,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 13.897846221923828
@@ -15538,7 +15538,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 13.897846221923828
@@ -15591,7 +15591,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 13.897846221923828
@@ -15644,7 +15644,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 13.897846221923828
@@ -15697,7 +15697,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 13.897846221923828
@@ -15750,7 +15750,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 13.897846221923828
@@ -15803,7 +15803,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 13.897846221923828
@@ -15856,7 +15856,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -15909,7 +15909,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -15962,7 +15962,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -16015,7 +16015,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -16068,7 +16068,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -16121,7 +16121,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -16174,7 +16174,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -16227,7 +16227,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -16280,7 +16280,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -16333,7 +16333,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -16386,7 +16386,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -16439,7 +16439,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -16492,7 +16492,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -16545,7 +16545,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -16598,7 +16598,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -16651,7 +16651,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -16704,7 +16704,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -16757,7 +16757,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -16810,7 +16810,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -16863,7 +16863,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -16916,7 +16916,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -16969,7 +16969,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -17022,7 +17022,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -17075,7 +17075,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -17128,7 +17128,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -17181,7 +17181,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -17234,7 +17234,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -17287,7 +17287,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -17340,7 +17340,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -17393,7 +17393,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -17446,7 +17446,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -17499,7 +17499,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -17552,7 +17552,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -17605,7 +17605,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -17658,7 +17658,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -17711,7 +17711,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -17764,7 +17764,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -17817,7 +17817,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -17870,7 +17870,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
@@ -17923,7 +17923,7 @@ mambo states:
 	quat_x: 0
 	quat_y: 0
 	quat_z: 0
-	sensor_dict: 
+	sensor_dict:
 		RunIdChanged_runId: b'2'
 		MassStorageInfoStateListChanged_full: 0
 		DronePosition_posy: 14.231501579284668
