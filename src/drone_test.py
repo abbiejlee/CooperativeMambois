@@ -1,5 +1,5 @@
 """
-    detection_drone_test.py
+    drone_test.py
     Marcus Abate | 16.30
     12/2/18
 

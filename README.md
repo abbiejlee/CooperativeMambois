@@ -1,44 +1,45 @@
 # CooperativeMambois
 
-*UNDER CONSTRUCTION*
+Marcus Abate, Travis Hank, Bradley Jomard, Kimberly Jung, Abbie Lee, Cecilia McCormick, Shakti Shaligram, Tingxiao Sun
 
-## DEVEL NOTES
+This project works with two [Parrot Mambo Drones](https://www.parrot.com/us/drones/parrot-mambo-fpv) to detect targets in a room and then shoot them.
 
-* Always remember to develop on your own test branch before merging to master. Talk to Marcus if you have questions about this.
-* ``__init__.py`` is added to every subdirectory so that modules defined in those directories can inherit some of the same functionality. Leave that in there for now.
+The challenge with the Mambo platform is that the drone can have either a forward-facing camera or a gun mounted. It cannot have both. For this reason, one drone (the Detection Drone) is tasked with finding the target using the forward-facing camera. The other drone (the Shooter Drone) then flies to the target location gathered by the Detection Drone and then shoots the target.
 
-``src/Drone.py`` is a useful tool for quick iteration and testing. You can use this by copying it into the directory you are working in and then calling it as an import in your script:
+The targets are orange and identified using color segmentation with [OpenCV](https://opencv.org/) for python. The two drones are controlled via [pyparrot](https://github.com/amymcgovern/pyparrot).
 
+## Installation
+
+This package requires [pyparrot](https://github.com/amymcgovern/pyparrot) to control the drones. Installation can be found [in the pyparrot docs](https://pyparrot.readthedocs.io/en/latest/index.html). The package is based on python3, so make sure to ``pip3 install`` every package instead of ``pip install``.
+
+The detection drone works via WiFi, however the shooter drone requires a Bluetooth connection. Currently, this feature is only supported on Linux systems.
+
+The detection drone handles color segmentation with OpenCv. To intall:
 ```
-from Drone import Drone
+pip3 install opencv-python
+pip3 install imutils
 ```
+[pyparrot](https://github.com/amymcgovern/pyparrot) has example code that can be run to test your installation before using test scripts in this package. In particular, try ``/examples/demoMamboVisionGui.py``.
 
-at the top of your script. Then, you define a class for your test script (named TestDrone, for instance) that *inherits* the Drone class:
+## Module Descriptions
 
-```
-class TestDrone(Drone):
-   # your code here
-```
+Under ``/Modules`` there are several important files for use with the package.
 
-You must then redefine the following functions within your class:
+* ``Drone.py`` encapsulates many of the common methods required to run test scripts with pyparrot.
+* ``KalmanFilter.py`` is a generalized and Mambo-specific implementation of Kalman Filter, to be run at every sensor callback for state estimation.
+* ``PositionController.py`` is a generalized and Mambo-specific implementation of LQR, to get commands for the drone for trajectory tracking.
+* ``ColorSegmentation.py`` has tools for vision handling for the package.
 
-```
-def flight_func():
-    # your code here
+## Demo
 
-def vision_cb():
-    # your code here
+A partial demo is available under ``/src``. The ``detection_script.py`` script can be run to fly the detection drone. It flies vertically until it detects the orange target, and then saves the xyz coordinates of its position upon target detection to ``shoot_here.csv`` as a 3-element list. The drone then flies away and lands safely.
+``shooter_script.py`` can then be run to fly the shooter drone equipped with the gun. It navigates to the location defined in ``shoot_here.csv`` by the detection drone and then shoots the target.
 
-def sensor_cb():
-    # your code here
-```
+The full demo will involve the detection drone taking off and searching the room in all three axes (instead of being constrained to the z-axis only) to find the target. Currently, we are limited in the state estimation side as the Parrot Mambo does not provide access to the requisite sensor readings such as accelerometer and gyroscope readings. The current demo uses a "position sensor" with little real documentation in the Mambo SDK.
 
-Your main method should almost always look like this:
+## Other Code
 
-```
-if __name__ == "__main__":
-    droneTest = DroneTest(args)
-    droneTest.execute()
-```
-
-Note that you only have to redefine the two callbacks if you're planning on using them. ``flight_func`` must be redefined always. See the comments in ``Drone.py`` to get a better idea of how this works, or see ``src/detection_drone_test.py`` for a working example.
+* ``/legacy`` contains code for previous demos as well as initial project tests.
+* ``/search`` contains an initial pass at path planning for the full demo.
+* ``/perception`` contains code for handling vision frames for the full demo.
+* ``/estimation_and_control`` contains code for testing sensors, estimation processes, and control methods.
