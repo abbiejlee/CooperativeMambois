@@ -49,9 +49,6 @@ class ShooterDrone(Drone):
                                                                         self.current_vels)
             self.controller.set_current_state(self.current_state)
 
-            # print('measure:',current_measurement)
-            # print('state:  ',self.current_state)
-
     def vision_cb(self, args):
         pass # no need; it's a BLE drone with no camera
 
@@ -73,9 +70,6 @@ class ShooterDrone(Drone):
 
         while dist > self.eps:
             cmd = self.controller.calculate_cmd_input()
-            # print('cmd:',cmd)
-            # print('current state:',self.current_state)
-            # print('cmd:          ',cmd)
 
             self.mambo.fly_direct(roll=cmd[1],
                                     pitch=cmd[0],
@@ -86,8 +80,6 @@ class ShooterDrone(Drone):
             dist = ((self.current_state[0] - self.desired_state[0])**2 +
                     (self.current_state[1] - self.desired_state[1])**2 +
                     (self.current_state[2] - self.desired_state[2])**2 )**0.5
-
-            # print('dist:',dist)
 
             if self.current_state[2] >= self.max_alt or dist >= self.max_dist:
                 return False

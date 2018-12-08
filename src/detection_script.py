@@ -55,9 +55,6 @@ class DetectionDrone(Drone):
                                                                         self.current_vels)
             self.controller.set_current_state(self.current_state)
 
-            # print('measure:',self.current_measurement)
-            # print('state:  ',self.current_state)
-
     def vision_cb(self, args):
         """
         Check each vision frame for the correct bounding box size of orange.
@@ -79,7 +76,6 @@ class DetectionDrone(Drone):
                     writer = csv.writer(file)
                     writer.writerows([self.firing_position])
         else:
-            # print('image is None')
             pass
 
     def go_to_xyz(self, desired_state):

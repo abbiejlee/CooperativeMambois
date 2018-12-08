@@ -61,8 +61,6 @@ class DroneDataCollectionTest(Drone):
             sensor_readout += "\nvel_ts_dt: " + str(self.vel_ts_dt)
 
             self.data.append(sensor_readout)
-            # print(sensor_readout)
-
 
     def flight_func(self, mamboVision, args):
         """

@@ -30,12 +30,10 @@ class KalmanFilter:
         self.X = X0
         self.U = U0
 
-        # TODO(abbielee): check initialization of below matrices
-
         # Initialize covariance matrices
         self.init_P()              # Error covariance
-        self.Rw = Rw                        # Process noise covariance
-        self.Rv = Rv                        # Measurement noise covariance
+        self.Rw = Rw               # Process noise covariance
+        self.Rv = Rv               # Measurement noise covariance
 
         # Initialize estimation gains
         self.L = self.update_L()

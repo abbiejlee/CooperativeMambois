@@ -27,15 +27,13 @@ class KalmanFilter:
         self.C = C
         self.D = D
 
-        self.Xhat = X0
+        self.X = X0
         self.U = U0
 
-        # TODO(abbielee): check initialization of below matrices
-
         # Initialize covariance matrices
-        self.P = self.init_p()              # Error covariance
-        self.Rw = Rw                        # Process noise covariance
-        self.Rv = Rv                        # Measurement noise covariance
+        self.init_P()              # Error covariance
+        self.Rw = Rw               # Process noise covariance
+        self.Rv = Rv               # Measurement noise covariance
 
         # Initialize estimation gains
         self.L = self.update_L()
@@ -59,8 +57,8 @@ class KalmanFilter:
 
         L[k] = AP[K]C.T(Rv + CP[k]C.T)^-1
         """
-        M = np.inv(self.Rv  + np.dot(C, np.dot(self.P, C.T)))
-        self.L = np.dot(A, np.dot(P, np.dot(C.T, M)))
+        M = np.linalg.inv(self.Rv  + np.dot(self.C, np.dot(self.P, self.C.T)))
+        self.L = np.dot(self.A, np.dot(self.P, np.dot(self.C.T, M)))
 
         return None
 
@@ -73,11 +71,12 @@ class KalmanFilter:
 
         Y: numpy array of sensor values at timestep k
         """
-        self.X = np.dot(A, X) + np.dot(B, U)
+        self.X = np.dot(self.A, self.X) + np.dot(self.B, self.U) + np.dot(self.L, Y - self.Yhat)
 
-        Acl = A - np.dot(self.L, self.C)
-        self.P = np.dot(Acl, np.dot(self.P, Acl.T)) + Rv + np.dot(self.L, np.dot(Rw, self.L))
+        Acl = self.A - np.dot(self.L, self.C)
+        self.P = np.dot(Acl, np.dot(self.P, Acl.T)) + self.Rv + np.dot(self.L, np.dot(self.Rw, self.L))
 
+        self.Yhat = np.dot(self.C, self.X) + np.dot(self.D, self.U)
         return None
 
     def get_state_estimate(self, Y, U):
@@ -88,7 +87,7 @@ class KalmanFilter:
         self.U = U
         self.update_estim(Y)
 
-        return self.X
+        return self.X.tolist()[0]
 
 class MamboKalman(KalmanFilter):
     def __init__(self, X0, U0):
@@ -103,6 +102,8 @@ class MamboKalman(KalmanFilter):
         states: x y z (coordinate positions)
         inputs: u v w (coordinate velocities)
         """
+        X0 = np.matrix(X0).T
+        U0 = np.matrix(U0).T
         self.dt = 0.5 # sample time in seconds. 2hz over WiFi.
         A = np.array([[1.0, 0.0, 0.0],
                       [0.0, 1.0, 0.0],
@@ -115,6 +116,6 @@ class MamboKalman(KalmanFilter):
         Rw = np.eye(3)
         Rv = np.array([[1.0, 0.0, 0.0],
                        [0.0, 1.0, 0.0],
-                       [0.0, 0.0, 0.5],])
+                       [0.0, 0.0, 1.0],])
 
         super().__init__(A, B, C, D, Rw, Rv, X0, U0)

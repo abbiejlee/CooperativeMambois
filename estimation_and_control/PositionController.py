@@ -131,15 +131,15 @@ class MamboPositionController(PositionController):
         B = np.array([[self.dt, 0.0, 0.0],
                       [0.0, self.dt, 0.0],
                       [0.0, 0.0, self.dt]])
-        Q = np.array([[1.0, 0.0, 0.0],
-                      [0.0, 1.0, 0.0],
-                      [0.0, 0.0, 0.5]])
-        R = np.array([[1.0, 0.0, 0.0],
-                      [0.0, 1.0, 0.0],
+        Q = np.array([[1000, 0.0, 0.0],
+                      [0.0, 1000, 0.0],
+                      [0.0, 0.0, 1.0]])
+        R = np.array([[0.5, 0.0, 0.0],
+                      [0.0, 0.5, 0.0],
                       [0.0, 0.0, 1.0]])
         super().__init__(A, B, Q, R)
 
-        self.max_input_power = [20, 20, 20, 20]
+        self.max_input_power = [40, 40, 40, 40]
         self.max_velocity = 1.0 # m/s, this is a guess.
 
     def calculate_cmd_input(self):
@@ -179,12 +179,11 @@ class MamboPositionController(PositionController):
 
             # scaling command input to power maximums:
             u_scaled[i] = u[i] / self.max_velocity * self.max_input_power[i]
-        self.cmd_input = [u[0], u[1], yaw, u[2]]
+        self.cmd_input = [u_scaled[0], u_scaled[1], yaw, u_scaled[2]]
 
-        return self.get_current_cmd()
+        return self.get_current_input()
 
 # test:
-
 if __name__ == "__main__":
     mambo = MamboPositionController()
 
