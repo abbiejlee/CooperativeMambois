@@ -89,7 +89,7 @@ class DetectionDrone(Drone):
         """
         self.desired_state = desired_state
         self.controller.set_desired_state(self.desired_state)
-        print('flying to position ', self.desired_state)
+        # print('flying to position ', self.desired_state)
 
         dist = ((self.current_state[0] - self.desired_state[0])**2 +
                 (self.current_state[1] - self.desired_state[1])**2 +
@@ -98,7 +98,8 @@ class DetectionDrone(Drone):
         while dist > self.eps:
             cmd = self.controller.calculate_cmd_input()
             print('current state:',self.current_state)
-            print('cmd:          ',cmd)
+            print('desired state:', self.desired_state)
+            # print('cmd:          ',cmd)
 
             self.mambo.fly_direct(roll=cmd[1],
                                     pitch=cmd[0],
@@ -114,14 +115,27 @@ class DetectionDrone(Drone):
         return True
 
     def controlled_fly_up(self):
-        raise NotImplementedError
+        """
+        Fly up using the go_to_xyz() command, which makes use of the
+        PositionController class.
+        """
+        while not self.target_acquired and self.current_state[2] <= self.max_alt:
+            desired_state = [0, 0, self.desired_state[2] + 0.1] # jump 10cm
+            self.go_to_xyz(desired_state)
+        if self.target_acquired:
+            return True
+        return False
 
     def dumb_fly_up(self):
+        """
+        Use direct power command to fly up without control or estimation.
+        This works for the detection drone because it can still grab its
+        current state during sensor_cb when vision_cb detects the target.
+        """
         while not self.target_acquired and self.current_state[2] <= self.max_alt:
-            # print('flying up')
             self.mambo.fly_direct(roll=0, pitch=0, yaw=0, vertical_movement=30, duration=None)
-            if self.target_acquired:
-                return True
+        if self.target_acquired:
+            return True
         return False
 
     def fly_away(self):
@@ -153,9 +167,12 @@ class DetectionDrone(Drone):
             while self.current_state == []:
                 continue
 
+            # set first desired state:
+            self.desired_state = self.current_state
+
             # dumb fly option:
             while not self.target_acquired:
-                jump = self.dumb_fly_up()
+                jump = self.controlled_fly_up()
                 if not jump:
                     print('failure')
                     break
