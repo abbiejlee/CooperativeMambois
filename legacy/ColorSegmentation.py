@@ -17,11 +17,11 @@ def cd_color_segmentation(img):
     y1 = 0
     x2 = 0
     y2 = 0
-    LOW_HUE = 3
-    HIGH_HUE = 27
-    LOW_SATURATION = 159
+    LOW_HUE = 1
+    HIGH_HUE = 25
+    LOW_SATURATION = 110
     HIGH_SATURATION = 255
-    LOW_VALUE = 160
+    LOW_VALUE = 175
     HIGH_VALUE = 255
     ln_color = (0,255,0)
 
@@ -54,7 +54,7 @@ def cd_color_segmentation(img):
             biggest_contour_area = contour_areas[max_ind]
             if biggest_contour_area > 10000:
                 ln_color = (0, 0, 255)
-                print("ready to fire")
+                # print("ready to fire")
             #draw bounding rectangle
             x1,y1,w,h = cv2.boundingRect(biggest_contour)
             x2,y2 = (x1+w, y1+h)
