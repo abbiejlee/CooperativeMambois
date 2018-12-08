@@ -101,7 +101,7 @@ class DroneDataCollectionTest(Drone):
             self.f.write(sensor_readout)
 
 test_flying = True
-mambo_addr = "e0:14:a7:ed:3d:fc"
+mambo_addr = "e0:14:ed:d2:3d:d1"
 use_wifi = False
 use_vision = False
 
