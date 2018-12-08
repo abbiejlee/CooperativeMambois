@@ -14,6 +14,7 @@
 from Drone import Drone
 from PositionController import MamboPositionController
 from KalmanFilter import MamboKalman
+from ColorSegmentation import cd_color_segmentation
 
 class DetectionDrone(Drone):
     """
@@ -23,7 +24,7 @@ class DetectionDrone(Drone):
     def __init__(self, mambo_addr):
         super().__init__(True, mambo_addr, True, True) # WiFi enabled drone
         self.controller = MamboPositionController()
-        self.kalmanfilter = MamboKalman()
+        self.kalmanfilter = MamboKalman([0,0,0],[0,0,0])
         self.current_vels = []
         self.current_state = []
         self.desired_state = []
@@ -33,6 +34,9 @@ class DetectionDrone(Drone):
         self.start_measure = False
         self.target_acquired = False
         self.firing_position = []
+
+        self.bb = [0, 0, 0, 0]
+        self.bb_threshold = 73648
 
     def sensor_cb(self, args):
         """
@@ -50,11 +54,28 @@ class DetectionDrone(Drone):
                                                                         self.current_vels)
             self.controller.set_current_state(self.current_state)
 
+            # print('measure:',self.current_measurement)
+            # print('state:  ',self.current_state)
+
     def vision_cb(self, args):
         """
         Check each vision frame for the correct bounding box size of orange.
         """
-        raise NotImplementedError
+        img = self.mamboVision.get_latest_valid_picture()
+
+        if img is not None and not self.target_acquired:
+            [((x1, y1), (x2, y2)), ln_color] = cd_color_segmentation(img)
+            self.bb = [x1, y1, x2, y2]
+
+            bb_size = (self.bb[2] - self.bb[0])*(self.bb[3] - self.bb[1])
+            # print('bb_size:',bb_size)
+            if bb_size >= self.bb_threshold:
+                print('orange detected')
+                self.target_acquired = True
+                self.firing_position = self.current_state
+        else:
+            # print('image is None')
+            pass
 
     def go_to_xyz(self, desired_state):
         """
@@ -96,7 +117,8 @@ class DetectionDrone(Drone):
 
     def dumb_fly_up(self):
         while not self.target_acquired and self.current_state[2] <= self.max_alt:
-            self.mambo.fly_direct(roll=0, pitch=0, yaw=0, vertical_movement=10, duration=None)
+            # print('flying up')
+            self.mambo.fly_direct(roll=0, pitch=0, yaw=0, vertical_movement=30, duration=None)
             if self.target_acquired:
                 return True
         return False
@@ -140,13 +162,19 @@ class DetectionDrone(Drone):
                     break
 
             self.mambo.smart_sleep(2)
-            
+
         self.fly_away()
         print('landing')
         self.mambo.safe_land(5)
+        print('done landing')
+        print('firing_pos:',self.firing_position)
+        self.mamboVision.close_video()
+        self.mambo.disconnect()
 
     def execute(self):
         super().execute()
+
+        print('done closing')
 
         return self.firing_position
 
@@ -159,7 +187,7 @@ class ShooterDrone(Drone):
     def __init__(self, mambo_addr, firing_position):
         super().__init__(True, mambo_addr, False, False) # BLE enabled drone
         self.controller = MamboPositionController()
-        self.kalmanfilter = MamboKalman()
+        self.kalmanfilter = MamboKalman([0,0,0],[0,0,0])
         self.current_vels = []
         self.current_state = []
         self.desired_state = firing_position
@@ -173,16 +201,20 @@ class ShooterDrone(Drone):
         Throw sensor readings into the state estimator and then save the
         current state. Then update the controller with this current state.
         """
+        # print('callback')
         if self.start_measure:
-            self.current_measurement = [self.mambo.sensors.sensors_dict['DronePosition_posx']/100,
+            current_measurement = [self.mambo.sensors.sensors_dict['DronePosition_posx']/100,
                                         self.mambo.sensors.sensors_dict['DronePosition_posy']/100,
                                         self.mambo.sensors.sensors_dict['DronePosition_posz']/-100]
             self.current_vels = [self.mambo.sensors.speed_x,
                                  self.mambo.sensors.speed_y,
                                  self.mambo.sensors.speed_z]
-            self.current_state = self.kalmanfilter.get_state_estimate(self.current_measurement,
+            self.current_state = self.kalmanfilter.get_state_estimate(current_measurement,
                                                                         self.current_vels)
             self.controller.set_current_state(self.current_state)
+
+            # print('measure:',current_measurement)
+            # print('state:  ',self.current_state)
 
     def vision_cb(self, args):
         pass # no need; it's a BLE drone with no camera
@@ -196,7 +228,6 @@ class ShooterDrone(Drone):
         Returns False if maximum altitude is reached/exceeded or distance gets
             too large.
         """
-        self.desired_state = desired_state
         self.controller.set_desired_state(self.desired_state)
         print('flying to position ', self.desired_state)
 
@@ -206,6 +237,7 @@ class ShooterDrone(Drone):
 
         while dist > self.eps:
             cmd = self.controller.calculate_cmd_input()
+            # print('cmd:',cmd)
             # print('current state:',self.current_state)
             # print('cmd:          ',cmd)
 
@@ -213,10 +245,13 @@ class ShooterDrone(Drone):
                                     pitch=cmd[0],
                                     yaw=cmd[2],
                                     vertical_movement=cmd[3],
-                                    duration=None)
+                                    duration=0.1)
+
             dist = ((self.current_state[0] - self.desired_state[0])**2 +
                     (self.current_state[1] - self.desired_state[1])**2 +
                     (self.current_state[2] - self.desired_state[2])**2 )**0.5
+
+            # print('dist:',dist)
 
             if self.current_state[2] >= self.max_alt or dist >= self.max_dist:
                 return False
@@ -244,29 +279,33 @@ class ShooterDrone(Drone):
             while self.mambo.sensors.speed_ts == 0:
                 continue
             self.start_measure = True
+            print(self.start_measure)
 
             print('getting first state')
             while self.current_state == []:
-                continue
+                self.mambo.smart_sleep(1)
 
-            self.go_to_firing_pos(self.desired_state)
+            self.go_to_firing_pos()
 
             shots_fired = self.mambo.fire_gun()
             if not shots_fired:
                 print('failed to shoot')
             self.mambo.smart_sleep(2)
 
-        self.fly_away()
+        # self.fly_away()
         print('landing')
         self.mambo.safe_land(5)
 
 
 detec_addr = "e0:14:ad:f6:3d:fc"
-shoot_addr = None
+shoot_addr = "e0:14:ed:d2:3d:d1"
 
 if __name__ == "__main__":
-    detecDrone = DetectionDrone(detec_addr)
-    firing_pos = detecDrone.execute()
+    # detecDrone = DetectionDrone(detec_addr)
+    # firing_pos = detecDrone.execute()
+    # print(firing_pos)
+    firing_pos = [0.002455833425437256, -0.09589520301115481, 1.9852610885880144]
+
 
     shootDrone = ShooterDrone(shoot_addr, firing_pos)
     shootDrone.execute()
