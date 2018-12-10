@@ -4,7 +4,7 @@ Marcus Abate, Abbie Lee, Kimberly Jung, Travis Hank, Bradley Jomard, Cecilia McC
 
 MIT 16.30 Final Project | Fall 2018
 
-[![Demo Video Here](https://www.youtube.com/watch?v=2mRfMGzRBg0&feature=youtu.be/0.jpg)](https://www.youtube.com/watch?v=2mRfMGzRBg0&feature=youtu.be)
+[![Demo Video Here](http://img.youtube.com/vi/2mRfMGzRBg0/0.jpg)](http://www.youtube.com/watch?v=2mRfMGzRBg0)
 
 [Demo Video Here](https://www.youtube.com/watch?v=2mRfMGzRBg0&feature=youtu.be)
 
