@@ -1,6 +1,8 @@
 # CooperativeMambois
 
-Marcus Abate, Travis Hank, Bradley Jomard, Kimberly Jung, Abbie Lee, Cecilia McCormick, Shakti Shaligram, Tingxiao Sun
+Marcus Abate, Abbie Lee, Kimberly Jung, Travis Hank, Bradley Jomard, Cecilia McCormick, Shakti Shaligram, Tingxiao Sun
+
+[Demo Video Here](https://www.youtube.com/watch?v=2mRfMGzRBg0&feature=youtu.be)
 
 This project works with two [Parrot Mambo Drones](https://www.parrot.com/us/drones/parrot-mambo-fpv) to detect targets in a room and then shoot them.
 
