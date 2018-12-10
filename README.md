@@ -2,6 +2,10 @@
 
 Marcus Abate, Abbie Lee, Kimberly Jung, Travis Hank, Bradley Jomard, Cecilia McCormick, Shakti Shaligram, Tingxiao Sun
 
+MIT 16.30 Final Project | Fall 2018
+
+[![Demo Video Here](https://www.youtube.com/watch?v=2mRfMGzRBg0&feature=youtu.be/0.jpg)](https://www.youtube.com/watch?v=2mRfMGzRBg0&feature=youtu.be)
+
 [Demo Video Here](https://www.youtube.com/watch?v=2mRfMGzRBg0&feature=youtu.be)
 
 This project works with two [Parrot Mambo Drones](https://www.parrot.com/us/drones/parrot-mambo-fpv) to detect targets in a room and then shoot them.
@@ -31,6 +35,8 @@ Under ``/Modules`` there are several important files for use with the package.
 * ``KalmanFilter.py`` is a generalized and Mambo-specific implementation of Kalman Filter, to be run at every sensor callback for state estimation.
 * ``PositionController.py`` is a generalized and Mambo-specific implementation of LQR, to get commands for the drone for trajectory tracking.
 * ``ColorSegmentation.py`` has tools for vision handling for the package.
+
+This repo doesn't install to your python ``/dist-packages`` or ``/site-packages`` folder, so to use any of these modules you will have to copy them to the directory of your script.
 
 ## Demo
 
