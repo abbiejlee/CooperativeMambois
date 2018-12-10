@@ -97,8 +97,8 @@ class DetectionDrone(Drone):
 
         while dist > self.eps:
             cmd = self.controller.calculate_cmd_input()
-            print('current state:',self.current_state)
-            print('desired state:', self.desired_state)
+            # print('current state:',self.current_state)
+            # print('desired state:', self.desired_state)
             # print('cmd:          ',cmd)
 
             self.mambo.fly_direct(roll=cmd[1],
@@ -172,7 +172,7 @@ class DetectionDrone(Drone):
 
             # dumb fly option:
             while not self.target_acquired:
-                jump = self.controlled_fly_up()
+                jump = self.dumb_fly_up()
                 if not jump:
                     print('failure')
                     break

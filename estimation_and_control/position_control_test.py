@@ -16,7 +16,7 @@ class PosCtrlDrone(Drone):
     def __init__(self, test_flying, mambo_addr, use_wifi, use_vision):
         super().__init__(test_flying, mambo_addr, use_wifi, use_vision)
         self.controller = MamboPositionController()
-        self.kalmanfilter = MamboKalman()
+        self.kalmanfilter = MamboKalman([0,0,0], [0,0,0])
         self.current_vels = [] # for use with KalmanFilter (used as u (input))
         self.current_state = [] # meters
         self.desired_state = [1, 0, 1] # meters
