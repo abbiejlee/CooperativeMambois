@@ -6,8 +6,6 @@ MIT 16.30 Final Project | Fall 2018
 
 [![Demo Video Here](http://img.youtube.com/vi/2mRfMGzRBg0/0.jpg)](http://www.youtube.com/watch?v=2mRfMGzRBg0)
 
-[Demo Video Here](https://www.youtube.com/watch?v=2mRfMGzRBg0&feature=youtu.be)
-
 This project works with two [Parrot Mambo Drones](https://www.parrot.com/us/drones/parrot-mambo-fpv) to detect targets in a room and then shoot them.
 
 The challenge with the Mambo platform is that the drone can have either a forward-facing camera or a gun mounted. It cannot have both. For this reason, one drone (the Detection Drone) is tasked with finding the target using the forward-facing camera. The other drone (the Shooter Drone) then flies to the target location gathered by the Detection Drone and then shoots the target.
